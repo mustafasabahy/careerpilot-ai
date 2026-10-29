@@ -70,7 +70,85 @@ Business rules remain ordinary Python outside the graph, so they are independent
 testable. LangChain is limited to provider/tool boundaries; it does not own
 authorization or approval decisions.
 
-See the code-level map in [docs/langgraph-langchain.md](docs/langgraph-langchain.md).
+### Exactly how LangGraph is used
+
+`src/careerpilot/workflows/job_analysis.py` builds the deterministic analysis
+`StateGraph`:
+
+```mermaid
+flowchart TD
+  Start((START)) --> Validate[validate_request]
+  Validate --> LoadJob[load_job]
+  LoadJob --> LoadProfile[load_profile]
+  LoadProfile --> Normalize[normalize_requirements]
+  Normalize --> Calculate[calculate_baseline]
+  Calculate --> Store[validate_assessment]
+  Store -->|complete| Return[return_result]
+  Store -->|missing evidence| Missing[missing_information]
+  Validate -. invalid .-> Fail[fail]
+  LoadJob -. not found .-> Fail
+  LoadProfile -. not found .-> Fail
+  Return --> End((END))
+  Missing --> End
+  Fail --> End
+```
+
+Each node is small and typed. LangGraph coordinates the state and routes; the
+actual fit calculation stays in `AnalysisService` and the domain baseline rules.
+That separation lets the business behavior run in unit tests without a model.
+
+The chat agent in `src/careerpilot/workflows/chat_agent.py` uses one checkpointed
+thread per operation:
+
+```text
+model  ->  tools  ->  final
+  ^         |
+  +---------+  (resume from the saved stage)
+```
+
+The checkpoint stores coordination references only. The authoritative conversation
+journal remains in SQLite. Owner checks, stable thread IDs, and recovery logic stop
+one user's checkpoint from being reused by another user.
+
+### Exactly how LangChain is used
+
+`src/careerpilot/tools/langchain.py` exposes six bounded `StructuredTool` adapters:
+
+| Tool | Purpose |
+|---|---|
+| `search_synthetic_jobs` | Search bundled synthetic postings |
+| `search_local_jobs` | Search operator-registered local imports |
+| `get_job` | Retrieve one authorized job |
+| `get_candidate_facts` | Read profile facts without changing them |
+| `get_company_info` | Read mock company metadata |
+| `normalize_job_results` | Normalize and deduplicate authorized references |
+
+Every tool validates Pydantic input and calls an already-authorized application
+service. Tool arguments cannot contain file paths, SQL, shell commands, or arbitrary
+URLs. Retrieved job text is untrusted content, never instructions or permissions.
+
+`src/careerpilot/providers/factory.py` is the only place that constructs the optional
+LangChain `ChatOpenAI` client. It validates provider settings, requires an explicit
+application API key, sets timeouts and output limits, disables hidden retries, and
+uses Pydantic structured-output schemas. The mock/fixture provider remains the
+default for offline development; a ChatGPT/Codex subscription credential is not
+used as an application API key.
+
+### What stays outside both libraries
+
+```mermaid
+flowchart LR
+  LG[LangGraph coordinates] --> App[Application services]
+  LC[LangChain adapts models/tools] --> App
+  App --> Domain[Pure domain rules]
+  App --> Auth[Authorization + ownership]
+  App --> DB[Persistence + audit]
+```
+
+- Business fit rules and evidence interpretation are plain Python/domain code.
+- Authorization is enforced by the API and application layer.
+- Approval is an authenticated user event, not an LLM statement.
+- Side effects run only through explicit adapters with idempotency and audit records.
 
 ## Quick start
 
