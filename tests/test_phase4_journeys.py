@@ -80,15 +80,15 @@ def test_journey_c_missing_information_continues(
     assert isinstance(jobs, list)
     client = TestClient(create_app(portal, chat_model=ScriptedModel(call("missing_information"))))
     conv = conversation(client, headers)
-    first = post(client, headers, conv, "ايه المعلومات الناقصة عندك؟")
+    first = post(client, headers, conv, "What information is missing?")
     assert first["task_status"] == "awaiting_clarification"
     client = TestClient(create_app(Portal(portal.root), chat_model=ScriptedModel()))
-    post(client, headers, conv, "اختيار", selection={"kind": "job", "id": str(jobs[0])})
+    post(client, headers, conv, "Select", selection={"kind": "job", "id": str(jobs[0])})
     done = post(
         client,
         headers,
         conv,
-        "اختيار",
+        "Select",
         selection={"kind": "candidate", "id": str(seeded["candidate_id"])},
     )
     assert done["status"] == "completed" and done["response"]["cards"][0]["kind"] == "missing"
@@ -101,7 +101,7 @@ def test_journey_d_application_preparation(api: tuple[Portal, UUID, dict[str, st
     assert isinstance(jobs, list)
     client = TestClient(create_app(portal, chat_model=ScriptedModel(call("prepare_application"))))
     conv = conversation(client, headers)
-    post(client, headers, conv, "جهزلي سي في من غير ما تخترع خبرة")
+    post(client, headers, conv, "Prepare my application without inventing experience")
     post(client, headers, conv, "Select", selection={"kind": "job", "id": str(jobs[0])})
     done = post(
         client,

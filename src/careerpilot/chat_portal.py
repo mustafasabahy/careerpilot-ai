@@ -60,7 +60,7 @@ class PortalChatBackend:
                 text=localized(
                     context,
                     "Stored local jobs. Send “Analyze job” to select one. No external search.",
-                    "وظائف محلية محفوظة. اكتب «حلل الوظيفة» للاختيار. لا يوجد بحث خارجي.",
+                    "",
                 ),
                 choices=choices,
                 payload={
@@ -81,9 +81,7 @@ class PortalChatBackend:
                     "Tracked applications."
                     if command == "applications"
                     else "Approval workflow states. Decisions require explicit controls.",
-                    "طلبات التقديم المسجلة."
-                    if command == "applications"
-                    else "حالات الموافقات. القرار يحتاج زر موافقة صريح.",
+                    "" if command == "applications" else "",
                 ),
                 references=refs,
                 payload={
@@ -136,7 +134,7 @@ class PortalChatBackend:
                     "Preparation result: "
                     + result.status
                     + ". Review all drafts; nothing was submitted.",
-                    "نتيجة التجهيز: " + result.status + ". راجع المسودات؛ لم يتم إرسال طلب.",
+                    "",
                 ),
                 references=refs,
                 payload=result.model_dump(mode="json"),
@@ -166,9 +164,7 @@ class PortalChatBackend:
                 "Missing/unverified requirements are marked unknown. Gaps are shown separately."
                 if command == "missing"
                 else "Evidence-based rule comparison; not a hiring prediction.",
-                "المعلومات الناقصة وغير المؤكدة موضحة كغير معروفة والفجوات منفصلة."
-                if command == "missing"
-                else "مقارنة قواعد بالأدلة وليست توقعًا لفرصة التوظيف.",
+                "" if command == "missing" else "",
             ),
             references=refs,
             payload=payload,

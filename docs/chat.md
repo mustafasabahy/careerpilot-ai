@@ -8,19 +8,19 @@ and Connect to restore that owner's conversations. No localStorage token is used
 
 ## Commands and selection
 
-Matching ignores surrounding whitespace, case and trailing `.?!؟` punctuation.
-Supported English / Arabic examples:
+Matching ignores surrounding whitespace, case and trailing `.?!` punctuation.
+Supported English examples:
 
-| English | Arabic |
-| --- | --- |
-| Show my jobs | اعرض الوظائف / وريني الوظائف |
-| Analyze job | حلل الوظيفة |
-| What information is missing? | ما المعلومات الناقصة؟ / ايه المعلومات الناقصة |
-| Prepare my application | جهز التقديم / جهز السي في |
-| Show my applications | اعرض طلباتي |
-| Show my pending approvals | اعرض الموافقات المعلقة |
-| Select job | اختار وظيفة |
-| Help | مساعدة |
+| Command |
+| --- |
+| Show my jobs |
+| Analyze job |
+| What information is missing? |
+| Prepare my application |
+| Show my applications |
+| Show my pending approvals |
+| Select |
+| Help |
 
 Short aliases `jobs`, `analyze`, `prepare`, `missing information` also work.
 “Select job” clears selected job/profile context and starts a fresh selection.
@@ -28,7 +28,7 @@ Use returned resource buttons, not arbitrary names or UUIDs in free text, to res
 ambiguous jobs/profiles. The server never silently chooses the first available profile.
 The pending intended command, selected IDs and expected selection kind are durable.
 Next-page controls page through available selections/results. Empty results are explicit.
-Unsupported text (including “yes”/“نعم”) produces help and never grants approval.
+Unsupported text (including “yes”) produces help and never grants approval.
 Clarification answers do not update candidate facts: use the existing explicitly
 confirmed profile/preferences forms to change those records.
 

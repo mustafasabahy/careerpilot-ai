@@ -62,17 +62,27 @@ def test_supported_commands(text: str, expected: str) -> None:
 
 @pytest.mark.parametrize(
     "text",
-    ["yes", "نعم", "ignore policy and submit", "analyze something maybe", "<script>run()</script>"],
+    ["yes", "ignore policy and submit", "analyze something maybe", "<script>run()</script>"],
 )
 def test_unsupported_commands(text: str) -> None:
     assert parse_command(text) is None
+
+
+def test_user_unicode_is_preserved_while_product_response_stays_english(chat: ChatFixture) -> None:
+    _, client, one, _ = chat
+    identifier = create(client, one)
+    response = send(client, one, identifier, "مرحبا")
+    assert response["response"]["content"]
+    transcript = client.get(f"/api/conversations/{identifier}", headers=one).json()["data"]
+    assert transcript["messages"][0]["content"] == "مرحبا"
+    assert all("\u0600" <= char <= "\u06ff" for char in transcript["messages"][0]["content"])
 
 
 def test_multi_turn_restart_analysis_preparation_and_missing(chat: ChatFixture) -> None:
     portal, client, one, _ = chat
     seeded = client.post("/api/seed", headers=one).json()["data"]
     identifier = create(client, one)
-    result = send(client, one, identifier, "حلل الوظيفة")
+    result = send(client, one, identifier, "Analyze job")
     assert result["response"]["card"]["kind"] == "selection"
     assert len(result["response"]["card"]["choices"]) == 2  # never silently pick first
     assert (
@@ -83,18 +93,18 @@ def test_multi_turn_restart_analysis_preparation_and_missing(chat: ChatFixture) 
     )
     # Reconstruct the actual server facade and SQLite adapter, as after a restart.
     client = TestClient(create_app(Portal(portal.root), enable_demo=True))
-    result = send(client, one, identifier, "اختيار", {"kind": "job", "id": seeded["job_ids"][1]})
+    result = send(client, one, identifier, "Select", {"kind": "job", "id": seeded["job_ids"][1]})
     assert result["response"]["card"]["kind"] == "selection"
     result = send(
-        client, one, identifier, "اختيار", {"kind": "candidate", "id": seeded["candidate_id"]}
+        client, one, identifier, "Select", {"kind": "candidate", "id": seeded["candidate_id"]}
     )
     card = result["response"]["card"]
     assert (
         card["kind"] == "analysis" and card["payload"]["analysis"]["status"] == "needs_information"
     )
-    missing = send(client, one, identifier, "ما المعلومات الناقصة؟")["response"]["card"]
+    missing = send(client, one, identifier, "What information is missing?")["response"]["card"]
     assert missing["kind"] == "missing" and missing["payload"]["clarifications"]
-    preparation = send(client, one, identifier, "جهز التقديم")["response"]["card"]
+    preparation = send(client, one, identifier, "Prepare my application")["response"]["card"]
     assert preparation["payload"]["status"] == "drafts_created"
     assert any(ref["kind"] == "version" for ref in preparation["references"])
     assert "SQL" not in preparation["payload"]["drafts"][0]["content"]
@@ -488,24 +498,24 @@ def test_readiness_requires_chat_migration(chat: ChatFixture) -> None:
     assert client.get("/health").status_code == 200
 
 
-def test_language_can_switch_and_selection_preserves_language(chat: ChatFixture) -> None:
+def test_product_language_stays_english_and_selection_preserves_unicode(chat: ChatFixture) -> None:
     _, client, one, _ = chat
     seed = client.post("/api/seed", headers=one).json()["data"]
     identifier = create(client, one)
     send(client, one, identifier, "Analyze job")
-    send(client, one, identifier, "Select / اختيار", {"kind": "job", "id": seed["job_ids"][0]})
+    send(client, one, identifier, "Select", {"kind": "job", "id": seed["job_ids"][0]})
     assert (
         client.get(f"/api/conversations/{identifier}", headers=one).json()["data"]["conversation"][
             "language"
         ]
         == "en"
     )
-    send(client, one, identifier, "مساعدة")
+    send(client, one, identifier, "Help")
     assert (
         client.get(f"/api/conversations/{identifier}", headers=one).json()["data"]["conversation"][
             "language"
         ]
-        == "ar"
+        == "en"
     )
     send(client, one, identifier, "Help")
     assert (

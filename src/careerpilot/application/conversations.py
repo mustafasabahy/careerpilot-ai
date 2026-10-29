@@ -238,37 +238,27 @@ class ChatBackend(Protocol):
 
 COMMANDS: dict[str, Command] = {
     "help": "help",
-    "مساعدة": "help",
     "show my jobs": "jobs",
     "jobs": "jobs",
-    "اعرض الوظائف": "jobs",
-    "وريني الوظائف": "jobs",
     "select job": "analyze",
-    "اختار وظيفة": "analyze",
     "analyze job": "analyze",
     "analyze": "analyze",
-    "حلل الوظيفة": "analyze",
     "what information is missing": "missing",
     "missing information": "missing",
-    "ما المعلومات الناقصة": "missing",
-    "ايه المعلومات الناقصة": "missing",
     "prepare my application": "prepare",
     "prepare": "prepare",
-    "جهز التقديم": "prepare",
-    "جهز السي في": "prepare",
     "show my applications": "applications",
-    "اعرض طلباتي": "applications",
     "show my pending approvals": "approvals",
-    "اعرض الموافقات المعلقة": "approvals",
 }
 
 
 def parse_command(text: str) -> Command | None:
-    return COMMANDS.get(text.strip().casefold().rstrip(".?!؟").strip())
+    return COMMANDS.get(text.strip().casefold().rstrip(".?!").strip())
 
 
 def localized(context: Conversation, en: str, ar: str) -> str:
-    return ar if context.language == "ar" else en
+    """Return the English product message; the second argument is retained for API compatibility."""
+    return en
 
 
 class ConversationService:
@@ -361,15 +351,9 @@ class ConversationService:
                 raise ChatConflict(
                     "Resolve the running operation before submitting another message"
                 )
-            language = context.language
-            if request.selection is None:
-                if any("\u0600" <= c <= "\u06ff" for c in request.text):
-                    language = "ar"
-                elif any(c.isascii() and c.isalpha() for c in request.text):
-                    language = "en"
-            context = context.model_copy(update={"language": language})
+            context = context.model_copy(update={"language": "en"})
             command = parse_command(request.text)
-            if request.text.strip().casefold().rstrip(".?!؟") in {"select job", "اختار وظيفة"}:
+            if request.text.strip().casefold().rstrip(".?!") in {"select job"}:
                 context = context.model_copy(
                     update={"job_id": None, "candidate_id": None, "assessment_id": None}
                 )
@@ -429,7 +413,7 @@ class ConversationService:
                         context,
                         "Operation failed. No approval was granted. "
                         "Check resource access and prerequisites.",
-                        "العملية فشلت. لم يتم منح موافقة. راجع الصلاحيات والبيانات المطلوبة.",
+                        "",
                     ),
                 )
             if len(card.model_dump_json().encode("utf-8")) > 128 * 1024:
@@ -566,8 +550,8 @@ def demo_help(context: Conversation) -> Card:
             context,
             "Demo assistant: use the suggested commands. Select resources with buttons. "
             'Free-form requests and "yes" do not execute actions or grant approval.',
-            "مساعد تجريبي بأوامر محددة. استخدم الاقتراحات وأزرار الاختيار. "
-            "الكلام الحر وكلمة نعم لا ينفذان إجراء ولا يمنحان موافقة.",
+            "The demo assistant supports bounded commands. Select resources with buttons. "
+            'Free-form requests and "yes" do not execute actions or grant approval.',
         ),
     )
 
@@ -596,7 +580,8 @@ def run_command(
                 text=localized(
                     context,
                     f"Select a {kind} to continue. If none exist, open workspace details.",
-                    "اختار الوظيفة أو الملف للمتابعة. لو القائمة فارغة افتح تفاصيل مساحة العمل.",
+                    "Select the job or profile to continue. If the list is empty, "
+                    "open workspace details.",
                 ),
                 choices=choices,
                 payload={

@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {direction,canSelect,outcomeLabel,textBlock,approvalEnabled,prompts,emptyResults} from '../../src/careerpilot/web/chat-logic.mjs';
 import {decisionPayload} from '../../src/careerpilot/web/logic.mjs';
-test('English/Arabic direction follows content, not account identity',()=>{
- assert.equal(direction('Show my jobs'),'ltr');assert.equal(direction('حلل الوظيفة'),'rtl');
- assert.equal(prompts.length,7);assert.ok(prompts.every(p=>p.length===2));
+test('the product uses English and LTR direction',()=>{
+ assert.equal(direction('Show my jobs'),'ltr');assert.equal(direction('مرحبا'),'ltr');
+ assert.equal(prompts.length,6);assert.ok(prompts.every(p=>typeof p==='string'));
 });
 test('resource choices require a pending clarification',()=>{
  assert.equal(canSelect({kind:'selection'},{pending:'analyze',awaiting:'job'}),true);
@@ -13,7 +13,7 @@ test('resource choices require a pending clarification',()=>{
 });
 test('hostile transcript text is rendered literally using textContent',()=>{
  const element=textBlock({createElement:tag=>({tag})},'p','<img src=x onerror=steal()>');
- assert.equal(element.textContent,'<img src=x onerror=steal()>');assert.equal(element.innerHTML,undefined);assert.equal(element.dir,'auto');
+ assert.equal(element.textContent,'<img src=x onerror=steal()>');assert.equal(element.innerHTML,undefined);assert.equal(element.dir,'ltr');
 });
 test('simulation, approval and unknown outcomes have distinct labels and controls',()=>{
  const thread=status=>({paused:true,review:{status}});

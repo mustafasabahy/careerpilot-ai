@@ -302,7 +302,7 @@ Health/readiness and current operational limits are documented in deployment.md.
 
 The static ES-module UI now opens a deterministic chat shell, retaining the workspace
 as review/detail views. ConversationService (application/conversations.py) parses a
-bounded English/Arabic command set; PortalChatBackend (chat_portal.py) delegates to
+bounded English command set; PortalChatBackend (chat_portal.py) delegates to
 existing authorized Portal workflows. It never calls internal HTTP or executes sensitive
 actions from text. Typed cards retain evidence and domain/version/thread references.
 

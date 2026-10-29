@@ -143,9 +143,7 @@ def test_missing_key_api_is_actionable_no_fallback(
     assert "OPENAI_API_KEY" in result["response"]["content"]
 
 
-@pytest.mark.parametrize(
-    "text", ["Could you check my local job options?", "وريني شغل مناسب من الوظايف الموجودة"]
-)
+@pytest.mark.parametrize("text", ["Could you check my local job options?"])
 def test_multistep_tools_history_persistence_and_isolation(
     setup: tuple[Portal, UUID, ConversationDatabase], text: str
 ) -> None:
@@ -185,7 +183,7 @@ def test_clarification_and_real_preparation(
     model = ScriptedModel(call("prepare_application"))
     chat = service(setup, model)
     conv = chat.create(owner)
-    first = submit(chat, owner, conv.id, "جهزلي سي في للوظيفة")
+    first = submit(chat, owner, conv.id, "Prepare my application")
     assert first.response and first.response.cards[0].kind == "selection"
     jobs = seeded["job_ids"]
     assert isinstance(jobs, list)

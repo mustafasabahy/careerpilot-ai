@@ -138,18 +138,19 @@ def evaluate_case(scenario: str, root: Path) -> dict[str, str | int | bool]:
                     ),
                 )
             ),
-            ModelReply(text="دي الوظايف المحلية المتاحة من غير بحث خارجي."),
+            ModelReply(text="These are the available local jobs; no external search was used."),
         )
         chat, owner = _chat_service(root, model)
         result = chat.submit(
             owner,
             chat.create(owner).id,
-            MessageInput(text="وريني شغل مناسب من الوظايف الموجودة", idempotency_key=uuid4()),
+            MessageInput(text="Show my jobs", idempotency_key=uuid4()),
         )
         return {
             "completed": result.status == "completed",
             "tools": len(result.agent_metadata.steps),
-            "local_only": "خارجي" in (result.response.content if result.response else ""),
+            "local_only": "external"
+            in (result.response.content.casefold() if result.response else ""),
         }
     if scenario == "chat_injection":
         model = _ScriptedChat(

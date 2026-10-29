@@ -12,7 +12,7 @@
 
 | Area | Capability |
 |---|---|
-| Chat | Bounded English/Arabic commands with persistent conversations |
+| Chat | Bounded English commands with persistent conversations |
 | Jobs | Local/synthetic discovery, normalization, and duplicate detection |
 | Analysis | Evidence-based matches, gaps, unknowns, and hard/soft requirements |
 | Documents | CV, cover-letter, and interview-practice drafts linked to evidence |

@@ -67,7 +67,7 @@ def test_runtime_graph_multistep_and_private_state(
     )
     client = TestClient(create_app(portal, chat_model=model))
     identifier = client.post("/api/conversations", headers=headers).json()["data"]["id"]
-    result = post(client, headers, identifier, "وريني فرص من الموجود عندي")
+    result = post(client, headers, identifier, "Show my jobs")
     assert result["status"] == "completed", result
     assert len(result["agent_metadata"]["steps"]) == 2
     assert "agent_progress" not in result
@@ -75,7 +75,7 @@ def test_runtime_graph_multistep_and_private_state(
         snapshots = list(saver.list({"configurable": {"thread_id": "chat-agent:" + result["id"]}}))
     assert len(snapshots) >= 6
     blob = json.dumps([s.checkpoint for s in snapshots], default=str)
-    assert "وريني" not in blob and "Here are your" not in blob
+    assert "Here are your" not in blob
     assert "chat-agent-v1" in blob
     assert len(model.history) == 3
 
@@ -90,18 +90,18 @@ def test_api_clarification_restart_and_preparation(
     model = ScriptedModel(call("prepare_application"))
     client = TestClient(create_app(portal, chat_model=model))
     identifier = client.post("/api/conversations", headers=headers).json()["data"]["id"]
-    first = post(client, headers, identifier, "محتاج سي في يناسب وظيفة")
+    first = post(client, headers, identifier, "Prepare my application")
     assert first["response"]["cards"][0]["kind"] == "selection"
     client = TestClient(create_app(Portal(portal.root), chat_model=ScriptedModel()))
     second = post(
-        client, headers, identifier, "اختيار", selection={"kind": "job", "id": str(jobs[0])}
+        client, headers, identifier, "Select", selection={"kind": "job", "id": str(jobs[0])}
     )
     assert second["response"]["cards"][0]["kind"] == "selection"
     third = post(
         client,
         headers,
         identifier,
-        "اختيار",
+        "Select",
         selection={"kind": "candidate", "id": str(seeded["candidate_id"])},
     )
     assert third["status"] == "completed", third

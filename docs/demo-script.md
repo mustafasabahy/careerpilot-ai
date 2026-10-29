@@ -71,11 +71,11 @@ For existing data, stop service, back up and run --migrate before restarting. To
 handling is unchanged: after refresh enter the same owner token and Connect.
 
 1. Open the chat shell and load synthetic examples only in an empty demo account.
-2. Send “اعرض الوظائف”, then “حلل الوظيفة”. Choose the mixed job by its ID suffix.
+2. Send “Show my jobs”, then “Analyze job”. Choose the mixed job by its ID suffix.
 3. Refresh the browser while awaiting profile selection. Reconnect with the same token:
    the saved conversation still asks for the profile. Choose Synthetic Candidate.
-4. Inspect met/unknown/gap findings and source evidence. Send “ما المعلومات الناقصة؟”.
-5. Send “جهز التقديم”. Review fact-linked CV, cover letter, document versions and practice
+4. Inspect met/unknown/gap findings and source evidence. Send “What information is missing?”.
+5. Send “Prepare my application”. Review fact-linked CV, cover letter, document versions and practice
    plan. Unverified SQL must not become a confirmed skill in the generated draft.
 6. Open Workspace details to create/track a synthetic application and stage an action
    using the retained controls. Return to chat; send “Show my pending approvals”.

@@ -57,9 +57,9 @@ This is a verified local technical preview, not a certified production service.
 
 ## Chat-first interface
 
-The chat assistant matches documented English/Arabic commands only; it does not
+The chat assistant matches documented English commands only; it does not
 understand arbitrary paraphrases, edit documents, upload files or perform external
-search/sending. Domain explanations/drafts may remain English even in an Arabic
+search/sending. Domain explanations/drafts are English; user/provider content may
 conversation. Tokens must be re-entered after refresh. History and pending selections
 persist, but automatic authentication restoration is deliberately absent.
 

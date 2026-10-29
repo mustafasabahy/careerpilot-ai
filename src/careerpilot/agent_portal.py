@@ -243,7 +243,7 @@ class PortalAgentTools:
                     kind="details",
                     text=(
                         "Please supply the intended application ID in your message before "
-                        "creating a proposal. اكتب معرّف طلب التقديم المقصود في رسالتك."
+                        "creating a proposal."
                     ),
                 ), context
             result = ApprovalThread.model_validate(
