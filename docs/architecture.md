@@ -26,6 +26,16 @@ flowchart LR
 
 ## Dependency direction and boundaries
 
+### Phase A multi-agent contracts
+
+`application/agent_contracts.py` defines behavior-neutral, serializable contracts
+for future delegation: `AgentRequest`, `AgentResult`, `AgentCapability`,
+`AgentError`, `DelegationEvent`, `GlobalExecutionBudget`, and their supporting
+reference/status types. They reuse the shared Pydantic `Model`, UTC timestamps, and
+UUID/reference conventions. They do not create agents, route requests, grant
+authorization, persist events, or enforce a global runtime budget. Phase B may wrap
+existing workflows with these contracts without duplicating business rules.
+
 | Boundary | Responsibility | Allowed dependencies | Current state after Phase 14 |
 | --- | --- | --- | --- |
 | Domain (`domain/`) | Career entities, value objects, business invariants | Standard library and Pydantic; no I/O | Profiles/jobs/fit/documents/actions/memory/evidence and runtime contracts |
