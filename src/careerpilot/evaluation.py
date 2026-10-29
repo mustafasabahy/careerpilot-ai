@@ -153,7 +153,7 @@ def evaluate_case(scenario: str, root: Path) -> dict[str, str | int | bool]:
             user_id=uuid4(),
             conversation_id=uuid4(),
             task_id=uuid4(),
-            allowed_capabilities=(AgentCapability.JOB_DISCOVERY,),
+            allowed_capabilities=(AgentCapability.JOB_DISCOVERY, AgentCapability.JOB_ANALYSIS),
         )
         return {
             "intent": classification.intent,
@@ -195,7 +195,7 @@ def evaluate_case(scenario: str, root: Path) -> dict[str, str | int | bool]:
             conversation_id=uuid4(),
             task_id=uuid4(),
             requested_capability=AgentCapability.JOB_DISCOVERY,
-            allowed_capabilities=(AgentCapability.JOB_DISCOVERY,),
+            allowed_capabilities=(AgentCapability.JOB_DISCOVERY, AgentCapability.JOB_ANALYSIS),
         )
         delegation_result = supervisor.delegate(
             agent_request, (AgentCapability.JOB_DISCOVERY, AgentCapability.JOB_ANALYSIS)

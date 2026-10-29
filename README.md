@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)
 ![LangGraph](https://img.shields.io/badge/Workflow-LangGraph-1f2937)
-![Tests](https://img.shields.io/badge/tests-599%20passed-brightgreen)
+![Tests](https://img.shields.io/badge/tests-636%20passed-brightgreen)
 ![Mode](https://img.shields.io/badge/demo-offline%20%2F%20synthetic-blue)
 
 ## What it does

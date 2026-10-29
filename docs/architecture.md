@@ -404,3 +404,21 @@ provenance/deletion, and existing approval/recovery behavior. Results are compar
 the versioned 18-case baseline. Phases G and H remain unimplemented because their provider
 and scheduling decision gates are unresolved; no unsupported scenarios are reported as
 passing.
+
+## Product completion gap closure
+
+The post-audit corrections enforce parent capability authorization in delegation, pass a
+bounded typed context of prior specialist summaries/references, run supervisor-invoked work
+inside the existing cooperative model/tool/time limits, and close delegation events with
+terminal status/output references. These changes improve the local MVP but do not make
+delegation durable across process restart, add commercial job data, or provide production
+email/scheduling integrations. Request-specific step, model-call, tool-call, and elapsed-time
+limits map to the cooperative execution boundary; token and cost limits remain explicitly
+unsupported until provider usage accounting is available. See `PRODUCT_COMPLETION_REPORT.md`
+for the verified checklist.
+
+Delegation event collections and nesting depth are execution-local context state, so concurrent
+calls on one supervisor instance do not reset or update each other's events. Child requests
+apply a scoped execution ceiling over an active `RunControl`. Nested ceilings compose by taking
+the strictest steps, model-call, tool-call, and elapsed-time limit, with the earliest deadline;
+parent limits therefore remain the outer boundaries and cannot be extended by a grandchild.

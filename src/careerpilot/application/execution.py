@@ -34,6 +34,8 @@ class RunJournal(Protocol):
 _DEFAULT_LIMITS: ContextVar[ExecutionLimits | None] = ContextVar("execution_limits", default=None)
 
 _CURRENT: ContextVar["RunControl | None"] = ContextVar("careerpilot_run", default=None)
+_CEILING: ContextVar["ExecutionLimits | None"] = ContextVar("careerpilot_limits", default=None)
+_CEILING_DEADLINE: ContextVar[float | None] = ContextVar("careerpilot_deadline", default=None)
 
 
 class RunControl:
@@ -90,12 +92,19 @@ class RunControl:
             self.journal and self.journal.cancelled(self.record.operation_id)
         ):
             raise RunCancelled()
-        if self.clock() >= self.deadline:
+        ceiling_deadline = _CEILING_DEADLINE.get()
+        if (
+            self.clock() >= min(self.deadline, ceiling_deadline)
+            if ceiling_deadline
+            else self.clock() >= self.deadline
+        ):
             raise DeadlineExceeded()
 
     def remaining(self, maximum: float) -> float:
         self.check()
-        seconds = self.deadline - self.clock()
+        ceiling_deadline = _CEILING_DEADLINE.get()
+        deadline = min(self.deadline, ceiling_deadline) if ceiling_deadline else self.deadline
+        seconds = deadline - self.clock()
         if seconds <= 0:
             raise DeadlineExceeded()
         return min(maximum, seconds)
@@ -104,6 +113,8 @@ class RunControl:
         with self._lock:
             self.check()
             maximum = getattr(self.limits, f"max_{resource}")
+            if ceiling := _CEILING.get():
+                maximum = min(maximum, getattr(ceiling, f"max_{resource}"))
             if (
                 type(count) is not int
                 or count < 0
@@ -262,6 +273,40 @@ def execution_scope(control: RunControl | None = None) -> Iterator[RunControl]:
         selected.finish()
     finally:
         _CURRENT.reset(token)
+
+
+@contextmanager
+def scoped_limits(limits: ExecutionLimits) -> Iterator[None]:
+    """Apply a child execution ceiling without replacing the active RunControl."""
+
+    requested = ExecutionLimits.model_validate(limits.model_dump())
+    previous = _CEILING.get()
+    ceiling = requested
+    if previous is not None:
+        ceiling = ExecutionLimits(
+            max_steps=min(previous.max_steps, requested.max_steps),
+            max_tool_calls=min(previous.max_tool_calls, requested.max_tool_calls),
+            max_retrieved_jobs=min(previous.max_retrieved_jobs, requested.max_retrieved_jobs),
+            max_model_calls=min(previous.max_model_calls, requested.max_model_calls),
+            overall_seconds=min(previous.overall_seconds, requested.overall_seconds),
+        )
+    limit_token = _CEILING.set(ceiling)
+    current = current_run()
+    requested_deadline = current.clock() + ceiling.overall_seconds if current else None
+    previous_deadline = _CEILING_DEADLINE.get()
+    deadline = (
+        min(previous_deadline, requested_deadline)
+        if previous_deadline is not None and requested_deadline is not None
+        else previous_deadline or requested_deadline
+    )
+    deadline_token = _CEILING_DEADLINE.set(deadline)
+    try:
+        if current:
+            current.check()
+        yield
+    finally:
+        _CEILING_DEADLINE.reset(deadline_token)
+        _CEILING.reset(limit_token)
 
 
 def storage_timeout(maximum: float = 5) -> float:

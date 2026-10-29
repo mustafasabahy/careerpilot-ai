@@ -42,6 +42,7 @@ class GlobalExecutionBudget(Model):
 
     max_model_calls: int | None = Field(default=None, ge=0, strict=True)
     max_tool_calls: int | None = Field(default=None, ge=0, strict=True)
+    max_steps: int | None = Field(default=None, ge=0, strict=True)
     max_seconds: float | None = Field(default=None, ge=0, allow_inf_nan=False)
     max_delegation_depth: int | None = Field(default=None, ge=0, strict=True)
     max_specialists: int | None = Field(default=None, ge=0, strict=True)
@@ -51,6 +52,7 @@ class GlobalExecutionBudget(Model):
     max_cost_usd: float | None = Field(default=None, ge=0, allow_inf_nan=False)
     model_calls: int = Field(default=0, ge=0, strict=True)
     tool_calls: int = Field(default=0, ge=0, strict=True)
+    steps: int = Field(default=0, ge=0, strict=True)
     elapsed_seconds: float = Field(default=0, ge=0, allow_inf_nan=False)
     delegation_depth: int = Field(default=0, ge=0, strict=True)
     specialists: int = Field(default=0, ge=0, strict=True)
@@ -64,6 +66,7 @@ class GlobalExecutionBudget(Model):
         pairs = (
             ("model_calls", self.model_calls, self.max_model_calls),
             ("tool_calls", self.tool_calls, self.max_tool_calls),
+            ("steps", self.steps, self.max_steps),
             ("elapsed_seconds", self.elapsed_seconds, self.max_seconds),
             ("delegation_depth", self.delegation_depth, self.max_delegation_depth),
             ("specialists", self.specialists, self.max_specialists),
@@ -83,6 +86,7 @@ class GlobalExecutionBudget(Model):
         limits = {
             "model_calls": (self.model_calls, self.max_model_calls),
             "tool_calls": (self.tool_calls, self.max_tool_calls),
+            "steps": (self.steps, self.max_steps),
             "seconds": (self.elapsed_seconds, self.max_seconds),
             "delegation_depth": (self.delegation_depth, self.max_delegation_depth),
             "specialists": (self.specialists, self.max_specialists),
@@ -105,8 +109,9 @@ class AgentRequest(Model):
     task_id: UUID
     parent_task_id: UUID | None = None
     requested_capability: AgentCapability
-    allowed_capabilities: tuple[AgentCapability, ...] = Field(default=(), max_length=16)
+    allowed_capabilities: tuple[AgentCapability, ...] = Field(min_length=1, max_length=16)
     input_references: tuple[AgentReference, ...] = Field(default=(), max_length=32)
+    delegation_context: tuple["DelegationContextItem", ...] = Field(default=(), max_length=16)
     deadline: UtcTimestamp | None = None
     budget: GlobalExecutionBudget | None = None
 
@@ -132,6 +137,16 @@ class AgentErrorCode(StrEnum):
     UNKNOWN_OUTCOME = "unknown_outcome"
     INTERNAL_FAILURE = "internal_failure"
     CONFLICTING_RESULTS = "conflicting_results"
+
+
+class DelegationContextItem(Model):
+    """Bounded, reference-first output passed from an earlier specialist."""
+
+    specialist_id: str = Field(min_length=1, max_length=64, pattern=r"^[a-z][a-z0-9_-]*$")
+    status: Literal["completed", "partial", "failed", "waiting_for_user_action"]
+    summary: Text
+    references: tuple[AgentReference, ...] = Field(default=(), max_length=32)
+    provenance: tuple[AgentReference, ...] = Field(default=(), max_length=32)
 
 
 class AgentError(Model):
