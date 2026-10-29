@@ -66,6 +66,16 @@ def test_environment_configuration_failure_is_useful_and_secret_free(
     assert "Codex" in str(error.value)
 
 
+def test_shared_openai_model_environment_name_is_supported(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setenv("CAREERPILOT_LLM_PROVIDER", "openai")
+    monkeypatch.setenv("OPENAI_MODEL", "synthetic-model")
+    monkeypatch.setenv("OPENAI_API_KEY", "synthetic-placeholder")
+    settings = LLMSettings()
+    assert settings.model == "synthetic-model"
+
+
 def test_secret_not_in_settings_repr_or_serialization() -> None:
     settings = LLMSettings(
         provider="openai",

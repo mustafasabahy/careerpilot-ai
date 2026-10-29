@@ -209,6 +209,11 @@ JSON schema is accepted; legacy automatic tool-calling fallback is rejected.
 Timeouts, SDK failure, refusal, truncation, parsing and grounding have explicit error
 types. No fallback converts a real-model failure into a mock success.
 
+Model selection accepts provider-specific settings (`CAREERPILOT_CHAT_MODEL` or
+`CAREERPILOT_LLM_MODEL`) and the shared `OPENAI_MODEL` alias, with provider-specific
+values taking precedence. Model availability is not inferred from an account or
+subscription; it is verified only by the opt-in live smoke test.
+
 `workflows/extracted_job.py` coordinates extraction with the unchanged Phase 3 graph.
 It checks candidate existence before any paid request, receives only a provider-neutral
 service, prepares an unreviewed job snapshot and injects its criterion definitions.

@@ -2,7 +2,7 @@
 
 from typing import Literal, Self
 
-from pydantic import Field, SecretStr, field_validator, model_validator
+from pydantic import AliasChoices, Field, SecretStr, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -15,7 +15,10 @@ class LLMSettings(BaseSettings):
         hide_input_in_errors=True,
     )
     provider: Literal["mock", "openai"] = "mock"
-    model: str | None = None
+    model: str | None = Field(
+        default=None,
+        validation_alias=AliasChoices("model", "CAREERPILOT_LLM_MODEL", "OPENAI_MODEL"),
+    )
     timeout_seconds: float = Field(default=30, gt=0, le=120, allow_inf_nan=False)
     max_retries: int = Field(default=0, ge=0, le=2)
     max_output_tokens: int = Field(default=4096, ge=512, le=8192)

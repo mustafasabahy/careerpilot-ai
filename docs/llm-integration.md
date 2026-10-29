@@ -47,6 +47,7 @@ excluded from settings repr/serialization and from domain/persistence models.
 | --- | --- | --- |
 | CAREERPILOT_LLM_PROVIDER | mock | mock or openai |
 | CAREERPILOT_LLM_MODEL | unset | fixture-v1/unset for mock; explicit nonblank model ID for OpenAI |
+| OPENAI_MODEL | unset | Shared model-name alias; used when the provider-specific model setting is absent |
 | OPENAI_API_KEY | unset | Required nonblank secret for real mode; no application default |
 | CAREERPILOT_LLM_TIMEOUT_SECONDS | 30 | Finite, greater than 0, at most 120; SDK request timeout |
 | CAREERPILOT_LLM_MAX_RETRIES | 0 | SDK retries from 0 to 2; no application retry/repair loop |
@@ -59,6 +60,12 @@ through your process environment, an ignored `.env` or your secrets manager.
 paste real credentials into source, fixtures, shell scripts, reports or this chat.
 A Codex/ChatGPT subscription is not an application API credential; no Codex token,
 subscription login or local agent credential is read by this application.
+
+The chat composition root uses the same OpenAI credential and accepts
+`CAREERPILOT_CHAT_MODEL` or the shared `OPENAI_MODEL` alias. Provider-specific
+settings take precedence over the shared alias. The configured model is never
+validated against an assumed account catalog; availability is confirmed only by an
+explicit live smoke test.
 
 There is no hardcoded real-model default or automatic paid fallback. OpenAI uses
 an explicit standard API endpoint, not an endpoint supplied by document text or

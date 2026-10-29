@@ -172,6 +172,24 @@ Show my pending approvals
 All demo records are synthetic. Sending messages, submitting applications, and job
 search outside local fixtures are simulated or disabled.
 
+### Optional OpenAI mode
+
+The existing provider boundary can use OpenAI through LangChain. Keep credentials out
+of source control and set them only in the server environment:
+
+```sh
+export OPENAI_API_KEY="..."
+export OPENAI_MODEL="your-model-id"
+export CAREERPILOT_CHAT_MODE=llm
+uv run --locked careerpilot-server --directory work/live-server --port 8765
+```
+
+`CAREERPILOT_CHAT_MODEL` and `CAREERPILOT_LLM_MODEL` take precedence over the shared
+`OPENAI_MODEL` alias. The model must support the configured structured-output path;
+availability is verified only by the explicit live smoke test. Offline demo mode does
+not make network calls, and a failed real provider call is reported as an error rather
+than silently replaced with synthetic output.
+
 ## Project shape
 
 ```text

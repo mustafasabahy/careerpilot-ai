@@ -148,7 +148,9 @@ rich document editing and general-model chat are deferred.
 
 The API now composes `ConversationalAgent`, `PortalAgentTools` and a provider-neutral
 `ChatModel`. The existing deterministic command path remains available in demo mode.
-`OPENAI_API_KEY` alone selects OpenAI / `gpt-5.4-mini`; explicitly setting
+`OPENAI_API_KEY` selects OpenAI when chat mode is not explicitly set; the model is
+configured by `CAREERPILOT_CHAT_MODEL` or the shared `OPENAI_MODEL` alias (with the
+provider-specific setting taking precedence). Explicitly setting
 `CAREERPILOT_CHAT_MODE=demo` keeps all chat offline even when a key is available.
 Explicit `llm` without a key returns setup guidance, not a silent fallback.
 No paid call runs at startup. The ordinary tests block socket access.

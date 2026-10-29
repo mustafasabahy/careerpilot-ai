@@ -58,6 +58,7 @@ def isolate_llm_and_block_network(
         "CAREERPILOT_LLM_MAX_RETRIES",
         "CAREERPILOT_LLM_MAX_OUTPUT_TOKENS",
         "OPENAI_API_KEY",
+        "OPENAI_MODEL",
     ):
         monkeypatch.delenv(key, raising=False)
 

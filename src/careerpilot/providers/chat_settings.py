@@ -2,7 +2,7 @@
 
 from typing import Literal
 
-from pydantic import Field, SecretStr, field_validator
+from pydantic import AliasChoices, Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -16,7 +16,13 @@ class ChatSettings(BaseSettings):
     )
     mode: Literal["demo", "llm"] | None = None
     provider: Literal["openai"] = "openai"
-    model: str = Field(default="gpt-5.4-mini", min_length=1, max_length=128, pattern=r"^[\w.-]+$")
+    model: str = Field(
+        default="gpt-5.4-mini",
+        min_length=1,
+        max_length=128,
+        pattern=r"^[\w.-]+$",
+        validation_alias=AliasChoices("model", "CAREERPILOT_CHAT_MODEL", "OPENAI_MODEL"),
+    )
     timeout_seconds: float = Field(default=30, gt=0, le=60, allow_inf_nan=False)
     max_retries: int = Field(default=0, ge=0, le=1)
     max_output_tokens: int = Field(default=2048, ge=256, le=4096)
