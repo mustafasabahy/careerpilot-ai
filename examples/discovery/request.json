@@ -1,0 +1,11 @@
+{
+  "id": "73914ca7-5a9d-5569-884f-687fb916d8da",
+  "created_at": "2026-01-01T00:00:00+00:00",
+  "candidate_id": "39873c0b-5e51-53b2-988d-28cf09930d2d",
+  "source_ids": [
+    "synthetic",
+    "local"
+  ],
+  "query": "Python",
+  "limit": 5
+}

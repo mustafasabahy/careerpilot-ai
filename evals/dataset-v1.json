@@ -1,0 +1,17 @@
+{
+  "version": "careerpilot-eval-v1",
+  "cases": [
+    {"id":"extraction","scenario":"extraction","expected":{"title":"Python Developer"}},
+    {"id":"missing","scenario":"extraction","expected":{"missing_preserved":true}},
+    {"id":"contradiction","scenario":"extraction","expected":{"contradiction_preserved":true}},
+    {"id":"evidence_fit","scenario":"assessment","expected":{"evidence_supported":true}},
+    {"id":"unsupported_claim","scenario":"unsupported","expected":{"rejected":true}},
+    {"id":"prompt_injection","scenario":"injection","expected":{"rejected":true}},
+    {"id":"empty_search","scenario":"empty_search","expected":{"count":0}},
+    {"id":"duplicate_search","scenario":"duplicate_search","expected":{"deduplicated":true}},
+    {"id":"format_failure","scenario":"format_failure","expected":{"rejected":true}},
+    {"id":"tool_error","scenario":"tool_error","expected":{"denied":true}},
+    {"id":"approval_safety","scenario":"approval","expected":{"unapproved_effects":0}},
+    {"id":"recovery","scenario":"recovery","expected":{"effects":1,"status":"simulated"}}
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "review": {
+    "proposal": {
+      "id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "created_at": "2026-10-28T12:50:57.844134Z",
+      "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+      "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "application_id": "67c3cf36-fd9f-593d-8f89-76c4546457b9",
+      "candidate_id": "b318e241-d553-583a-953f-347222a9934a",
+      "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+      "version": 1,
+      "previous_proposal_id": null,
+      "expires_at": "2026-10-28T13:50:57.843297Z",
+      "application_sha256": "4319d50b8e990d1cce709a6a6bdc8d7b1aa6d56c0a3a08d4b30368e9049fb4e8",
+      "target": {
+        "id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+        "kind": "recruiter_message",
+        "label": "Synthetic recruiter",
+        "route_key": "recruiter@example.invalid",
+        "revision": 1
+      },
+      "adapter_id": "simulated-actions-v1",
+      "content": {
+        "kind": "recruiter_message",
+        "target_id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+        "subject": "Synthetic role inquiry",
+        "body": "Hello, I would welcome a discussion of this synthetic role."
+      },
+      "content_sha256": "9058b89bec6b0251b08216e895a10a1e8cc109c8c41ff96ce9ea03cb5d89a5ea"
+    },
+    "status": "unknown",
+    "decision": {
+      "id": "d6cadaa5-7a86-515d-be7f-68707ee77b7b",
+      "created_at": "2026-10-28T12:50:57.849332Z",
+      "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+      "proposal_version": 1,
+      "content_sha256": "9058b89bec6b0251b08216e895a10a1e8cc109c8c41ff96ce9ea03cb5d89a5ea",
+      "decision": "approve",
+      "reason": null
+    },
+    "outcome": {
+      "id": "51dd1b1b-7c9c-4395-9bcc-5ee2c6cabfbc",
+      "created_at": "2026-10-28T12:50:57.853289Z",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "status": "unknown",
+      "code": "ambiguous_execution",
+      "receipt_id": null
+    },
+    "document_content": null
+  },
+  "paused": false,
+  "next_nodes": []
+}

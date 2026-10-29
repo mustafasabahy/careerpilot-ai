@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "careerpilot-ai"
+version = "0.1.0"
+description = "CareerPilot AI: a modular career management platform foundation"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.120,<1",
+    "langchain-core>=1.7,<2",
+    "langchain-openai>=1.7.3,<2",
+    "langgraph>=1.2.18,<2",
+    "langgraph-checkpoint-sqlite>=3,<4",
+    "langsmith>=0.14.14,<0.15",
+    "openai>=3.40,<4",
+    "pydantic>=2.12,<3",
+    "pydantic-settings>=2.11,<3",
+    "urllib3>=2,<3",
+    "uvicorn>=0.38,<1",
+]
+
+[project.scripts]
+careerpilot = "careerpilot.cli:main"
+careerpilot-demo = "careerpilot.demo:main"
+careerpilot-extract = "careerpilot.extract_demo:main"
+careerpilot-discover = "careerpilot.discovery_demo:main"
+careerpilot-prepare = "careerpilot.preparation_demo:main"
+careerpilot-memory = "careerpilot.memory_demo:main"
+careerpilot-approval = "careerpilot.approval_demo:main"
+careerpilot-evaluate = "careerpilot.evaluation:main"
+careerpilot-server = "careerpilot.server:main"
+careerpilot-storage = "careerpilot.backup:main"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28,<1",
+    "httpx2>=2.16,<3",
+    "mypy>=1.18,<2",
+    "pytest>=8.4,<10",
+    "ruff>=0.14,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/careerpilot"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests", "scripts"]
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-config --strict-markers"
+markers = ["live_llm: paid live model test; explicit flag, environment opt-in and credentials required"]

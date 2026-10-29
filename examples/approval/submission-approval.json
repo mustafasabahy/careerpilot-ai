@@ -1,0 +1,137 @@
+{
+  "waiting": {
+    "review": {
+      "proposal": {
+        "id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+        "created_at": "2026-10-28T12:50:57.744385Z",
+        "thread_id": "396add92-5e73-5f11-bcf9-4935d77a08f3",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "5dbb916b-cb48-5d83-8e9a-1212b7d63314",
+        "candidate_id": "8d7064da-69da-5156-9a3d-a46d1b92ce12",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.743457Z",
+        "application_sha256": "f0c1c1f81aac31675dd048930a846da86306b5bae19f1c1f694640564aa58e11",
+        "target": {
+          "id": "2918ff09-6574-5f02-a464-24d3edaa98e6",
+          "kind": "submit_application",
+          "label": "Synthetic application destination",
+          "route_key": "fixture-inbox",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "submit_application",
+          "target_id": "2918ff09-6574-5f02-a464-24d3edaa98e6",
+          "document_version_id": "6902e488-e253-5c0a-9d3c-1e36875b6ded",
+          "document_sha256": "bc2a499a8eaa84bac4089c5b0da92aaa6021d4a53eb6f3cef3ceca14d0249a77"
+        },
+        "content_sha256": "411820d56e027dba7338a0e56c19b06cd0562a78daeaa244b827a7c3c2598b9d"
+      },
+      "status": "pending",
+      "decision": null,
+      "outcome": null,
+      "document_content": "Synthetic user-reviewed CV for the approval demonstration."
+    },
+    "paused": true,
+    "next_nodes": [
+      "human_review"
+    ]
+  },
+  "decision": {
+    "id": "396b62e9-5cd9-5ed8-aacf-280dd79ddfc7",
+    "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+    "thread_id": "396add92-5e73-5f11-bcf9-4935d77a08f3",
+    "proposal_version": 1,
+    "content_sha256": "411820d56e027dba7338a0e56c19b06cd0562a78daeaa244b827a7c3c2598b9d",
+    "decision": "approve",
+    "reason": "Synthetic explicit operator review"
+  },
+  "result": {
+    "review": {
+      "proposal": {
+        "id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+        "created_at": "2026-10-28T12:50:57.744385Z",
+        "thread_id": "396add92-5e73-5f11-bcf9-4935d77a08f3",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "5dbb916b-cb48-5d83-8e9a-1212b7d63314",
+        "candidate_id": "8d7064da-69da-5156-9a3d-a46d1b92ce12",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.743457Z",
+        "application_sha256": "f0c1c1f81aac31675dd048930a846da86306b5bae19f1c1f694640564aa58e11",
+        "target": {
+          "id": "2918ff09-6574-5f02-a464-24d3edaa98e6",
+          "kind": "submit_application",
+          "label": "Synthetic application destination",
+          "route_key": "fixture-inbox",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "submit_application",
+          "target_id": "2918ff09-6574-5f02-a464-24d3edaa98e6",
+          "document_version_id": "6902e488-e253-5c0a-9d3c-1e36875b6ded",
+          "document_sha256": "bc2a499a8eaa84bac4089c5b0da92aaa6021d4a53eb6f3cef3ceca14d0249a77"
+        },
+        "content_sha256": "411820d56e027dba7338a0e56c19b06cd0562a78daeaa244b827a7c3c2598b9d"
+      },
+      "status": "simulated",
+      "decision": {
+        "id": "396b62e9-5cd9-5ed8-aacf-280dd79ddfc7",
+        "created_at": "2026-10-28T12:50:57.750131Z",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+        "thread_id": "396add92-5e73-5f11-bcf9-4935d77a08f3",
+        "proposal_version": 1,
+        "content_sha256": "411820d56e027dba7338a0e56c19b06cd0562a78daeaa244b827a7c3c2598b9d",
+        "decision": "approve",
+        "reason": "Synthetic explicit operator review"
+      },
+      "outcome": {
+        "id": "496bd4aa-d309-4f60-9f38-9de21ff03d1b",
+        "created_at": "2026-10-28T12:50:57.753789Z",
+        "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+        "status": "simulated",
+        "code": "simulated_effect",
+        "receipt_id": "135626a4-cb4b-54c1-b70b-0a836027aa7d"
+      },
+      "document_content": "Synthetic user-reviewed CV for the approval demonstration."
+    },
+    "paused": false,
+    "next_nodes": []
+  },
+  "audit": [
+    {
+      "id": "5ffbaa8f-d71b-542f-9f11-f9afa26f2cd7",
+      "created_at": "2026-10-28T12:50:57.745107Z",
+      "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "proposed"
+    },
+    {
+      "id": "1fd7c9c9-648d-5173-b0b1-d14ba9240ace",
+      "created_at": "2026-10-28T12:50:57.750365Z",
+      "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "approved"
+    },
+    {
+      "id": "3513d4c5-0264-5c21-b0c8-e522e61fe789",
+      "created_at": "2026-10-28T12:50:57.752892Z",
+      "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "execution_claimed"
+    },
+    {
+      "id": "7fa5cd28-04e1-5144-9bc6-65398163d305",
+      "created_at": "2026-10-28T12:50:57.753988Z",
+      "proposal_id": "504a24cf-25d2-5f0d-992c-8b131139f5fc",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "simulated"
+    }
+  ]
+}

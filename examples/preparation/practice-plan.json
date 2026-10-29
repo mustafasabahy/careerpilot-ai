@@ -1,0 +1,93 @@
+{
+  "questions": [
+    {
+      "id": "6d215969-0180-5d73-a42e-2f2a181d2d56",
+      "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+      "category": "technical",
+      "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+    },
+    {
+      "id": "51124250-5d91-50b6-b524-9a4212c5d629",
+      "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+      "category": "evidence_review",
+      "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+    },
+    {
+      "id": "3e696964-24e3-5697-a61a-7c77336ff621",
+      "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+      "category": "language",
+      "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+    },
+    {
+      "id": "642b74c4-f839-513d-8520-e9554569674a",
+      "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+      "category": "technical",
+      "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+    },
+    {
+      "id": "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+      "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+      "category": "language",
+      "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+    },
+    {
+      "id": "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+      "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+      "category": "evidence_review",
+      "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+    },
+    {
+      "id": "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9",
+      "requirement_id": null,
+      "category": "behavioral",
+      "prompt": "Describe a task you actually completed: context, your role, choices and evidenced outcome. If none is available, use a clearly labeled hypothetical exercise; never invent metrics."
+    }
+  ],
+  "sessions": [
+    {
+      "order": 1,
+      "duration_minutes": 20,
+      "focus": "Evidence and clarification review",
+      "question_ids": [
+        "6d215969-0180-5d73-a42e-2f2a181d2d56",
+        "51124250-5d91-50b6-b524-9a4212c5d629",
+        "3e696964-24e3-5697-a61a-7c77336ff621",
+        "642b74c4-f839-513d-8520-e9554569674a",
+        "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+        "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+        "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+      ],
+      "deliverable": "List confirmed examples, genuine gaps and unanswered questions."
+    },
+    {
+      "order": 2,
+      "duration_minutes": 30,
+      "focus": "Job-relevant technical and language practice",
+      "question_ids": [
+        "6d215969-0180-5d73-a42e-2f2a181d2d56",
+        "51124250-5d91-50b6-b524-9a4212c5d629",
+        "3e696964-24e3-5697-a61a-7c77336ff621",
+        "642b74c4-f839-513d-8520-e9554569674a",
+        "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+        "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+        "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+      ],
+      "deliverable": "A small practice solution or explanation with assumptions clearly marked."
+    },
+    {
+      "order": 3,
+      "duration_minutes": 25,
+      "focus": "Mock interview and reflection",
+      "question_ids": [
+        "6d215969-0180-5d73-a42e-2f2a181d2d56",
+        "51124250-5d91-50b6-b524-9a4212c5d629",
+        "3e696964-24e3-5697-a61a-7c77336ff621",
+        "642b74c4-f839-513d-8520-e9554569674a",
+        "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+        "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+        "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+      ],
+      "deliverable": "Evidence-backed answers and a revised practice checklist, not invented career claims."
+    }
+  ]
+}

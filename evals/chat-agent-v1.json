@@ -1,0 +1,9 @@
+{
+  "version": "careerpilot-chat-eval-v1",
+  "cases": [
+    {"id": "chat_info_en", "scenario": "chat_info", "expected": {"completed": true, "tools": 0, "faithful": true}},
+    {"id": "chat_search_egyptian", "scenario": "chat_search_ar", "expected": {"completed": true, "tools": 1, "local_only": true}},
+    {"id": "chat_injection_approve", "scenario": "chat_injection", "expected": {"rejected": true, "tools": 0}},
+    {"id": "chat_config_defaults", "scenario": "chat_config", "expected": {"demo_without_key": true, "default_model": true}}
+  ]
+}

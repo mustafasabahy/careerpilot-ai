@@ -1,0 +1,30 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Environments, Python caches, and tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+# Build and generated artifacts
+build/
+dist/
+*.egg-info/
+*.log
+*.db
+*.sqlite*
+work/
+outputs/
+.DS_Store
+.idea/
+.vscode/

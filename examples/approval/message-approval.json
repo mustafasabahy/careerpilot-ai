@@ -1,0 +1,137 @@
+{
+  "waiting": {
+    "review": {
+      "proposal": {
+        "id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+        "created_at": "2026-10-28T12:50:57.722649Z",
+        "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "67c3cf36-fd9f-593d-8f89-76c4546457b9",
+        "candidate_id": "b318e241-d553-583a-953f-347222a9934a",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.721592Z",
+        "application_sha256": "2583246e143bd806ebbb7b65f2693eb971b1f08894ad66f53f8bb630c7c769bd",
+        "target": {
+          "id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+          "kind": "recruiter_message",
+          "label": "Synthetic recruiter",
+          "route_key": "recruiter@example.invalid",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "recruiter_message",
+          "target_id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+          "subject": "Synthetic role inquiry",
+          "body": "Hello, I would welcome a discussion of this synthetic role."
+        },
+        "content_sha256": "a51834d39931a9ee06f4540652f06f42180490cc283129fabf9c9935cc6cdfb4"
+      },
+      "status": "pending",
+      "decision": null,
+      "outcome": null,
+      "document_content": null
+    },
+    "paused": true,
+    "next_nodes": [
+      "human_review"
+    ]
+  },
+  "decision": {
+    "id": "8d8e84bf-e996-56d3-a152-3fef8a35bbda",
+    "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+    "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+    "proposal_version": 1,
+    "content_sha256": "a51834d39931a9ee06f4540652f06f42180490cc283129fabf9c9935cc6cdfb4",
+    "decision": "approve",
+    "reason": "Synthetic explicit operator review"
+  },
+  "result": {
+    "review": {
+      "proposal": {
+        "id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+        "created_at": "2026-10-28T12:50:57.722649Z",
+        "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "67c3cf36-fd9f-593d-8f89-76c4546457b9",
+        "candidate_id": "b318e241-d553-583a-953f-347222a9934a",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.721592Z",
+        "application_sha256": "2583246e143bd806ebbb7b65f2693eb971b1f08894ad66f53f8bb630c7c769bd",
+        "target": {
+          "id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+          "kind": "recruiter_message",
+          "label": "Synthetic recruiter",
+          "route_key": "recruiter@example.invalid",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "recruiter_message",
+          "target_id": "44c914c9-8d8c-5ef8-bafc-63007496a2ab",
+          "subject": "Synthetic role inquiry",
+          "body": "Hello, I would welcome a discussion of this synthetic role."
+        },
+        "content_sha256": "a51834d39931a9ee06f4540652f06f42180490cc283129fabf9c9935cc6cdfb4"
+      },
+      "status": "simulated",
+      "decision": {
+        "id": "8d8e84bf-e996-56d3-a152-3fef8a35bbda",
+        "created_at": "2026-10-28T12:50:57.731136Z",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+        "thread_id": "62703021-8ec8-543d-8553-50fbad3e8982",
+        "proposal_version": 1,
+        "content_sha256": "a51834d39931a9ee06f4540652f06f42180490cc283129fabf9c9935cc6cdfb4",
+        "decision": "approve",
+        "reason": "Synthetic explicit operator review"
+      },
+      "outcome": {
+        "id": "e0d47cb7-46c1-46d0-8621-1ea4a43f064a",
+        "created_at": "2026-10-28T12:50:57.735035Z",
+        "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+        "status": "simulated",
+        "code": "simulated_effect",
+        "receipt_id": "dae7a09c-f4a8-5b18-ae19-1fae16c56a6d"
+      },
+      "document_content": null
+    },
+    "paused": false,
+    "next_nodes": []
+  },
+  "audit": [
+    {
+      "id": "a8ef895d-11c7-5cc7-a27a-513d354d599a",
+      "created_at": "2026-10-28T12:50:57.723362Z",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "proposed"
+    },
+    {
+      "id": "9006f434-9754-5501-a8fd-d076e6124079",
+      "created_at": "2026-10-28T12:50:57.731397Z",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "approved"
+    },
+    {
+      "id": "332cddc6-bba2-5228-af6a-64dc08dc9355",
+      "created_at": "2026-10-28T12:50:57.734082Z",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "execution_claimed"
+    },
+    {
+      "id": "9dfb7d33-4788-50d5-a830-45bc176c6b73",
+      "created_at": "2026-10-28T12:50:57.735258Z",
+      "proposal_id": "2f92cbdb-909c-5477-be00-3fa8b63446cd",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "simulated"
+    }
+  ]
+}

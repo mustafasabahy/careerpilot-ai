@@ -1,0 +1,352 @@
+{
+  "status": "needs_information",
+  "intelligence": {
+    "candidate_id": "869f844a-72b2-5c32-968a-f47508926c71",
+    "job_id": "dd99f8fe-09f9-5725-8101-319f88db6370",
+    "assessment_id": "cf96d7e0-1d62-555f-ae5d-0f32f545f64e",
+    "decision": "needs_review",
+    "counts": {
+      "hard_supported": 0,
+      "hard_gaps": 0,
+      "hard_unknown": 2,
+      "soft_supported": 0,
+      "soft_gaps": 0,
+      "soft_unknown": 3,
+      "unspecified": 1
+    },
+    "rules": {
+      "version": "baseline-v1",
+      "aliases": [
+        {
+          "alias": "python programming",
+          "canonical": "python"
+        }
+      ],
+      "accepted_origins": [
+        "user_statement",
+        "source_document"
+      ]
+    },
+    "criteria": [
+      {
+        "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+        "importance": "hard",
+        "definition": {
+          "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+          "kind": "skill",
+          "name": "python",
+          "minimum_skill": "intermediate",
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+        "importance": "hard",
+        "definition": {
+          "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+          "kind": "work_authorization",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": true
+        }
+      },
+      {
+        "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+        "importance": "soft",
+        "definition": {
+          "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+          "kind": "language",
+          "name": "english",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+        "importance": "soft",
+        "definition": {
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "kind": "skill",
+          "name": "sql",
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+        "importance": "soft",
+        "definition": {
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "kind": "language",
+          "name": "german",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "kind": "unsupported",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      }
+    ],
+    "facts": [],
+    "explanations": [
+      {
+        "finding": {
+          "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+          "importance": "hard",
+          "outcome": "unknown",
+          "reason": "not_recorded",
+          "evidence_ids": []
+        },
+        "source_description": "Python at intermediate level",
+        "explanation": "No matching profile fact is recorded. Absence is unknown, not proof the candidate lacks the skill.",
+        "fact_ids": []
+      },
+      {
+        "finding": {
+          "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+          "importance": "hard",
+          "outcome": "unknown",
+          "reason": "unknown_value",
+          "evidence_ids": []
+        },
+        "source_description": "Work authorization explicitly declared",
+        "explanation": "The relevant value is missing or explicitly unknown.",
+        "fact_ids": []
+      },
+      {
+        "finding": {
+          "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+          "importance": "soft",
+          "outcome": "unknown",
+          "reason": "not_recorded",
+          "evidence_ids": []
+        },
+        "source_description": "English B2 preferred",
+        "explanation": "No matching profile fact is recorded. Absence is unknown, not proof the candidate lacks the skill.",
+        "fact_ids": []
+      },
+      {
+        "finding": {
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "importance": "soft",
+          "outcome": "unknown",
+          "reason": "not_recorded",
+          "evidence_ids": []
+        },
+        "source_description": "SQL preferred",
+        "explanation": "No matching profile fact is recorded. Absence is unknown, not proof the candidate lacks the skill.",
+        "fact_ids": []
+      },
+      {
+        "finding": {
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "importance": "soft",
+          "outcome": "unknown",
+          "reason": "not_recorded",
+          "evidence_ids": []
+        },
+        "source_description": "German B2 preferred",
+        "explanation": "No matching profile fact is recorded. Absence is unknown, not proof the candidate lacks the skill.",
+        "fact_ids": []
+      },
+      {
+        "finding": {
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "importance": "unspecified",
+          "outcome": "unknown",
+          "reason": "unsupported_criterion",
+          "evidence_ids": []
+        },
+        "source_description": "Leadership potential (unspecified importance)",
+        "explanation": "This criterion is outside supported business rules. No candidate judgment is made.",
+        "fact_ids": []
+      }
+    ],
+    "clarifications": [
+      {
+        "id": "ab6eab45-ce3e-59ce-8731-cedb5104c2bb",
+        "reason": "missing_identity",
+        "question": "What name should appear on your draft? Confirm it explicitly.",
+        "requirement_id": null,
+        "fact_ids": [],
+        "blocking": true
+      },
+      {
+        "id": "8bfd13ad-830a-5526-8dfb-d3fcb9390aaf",
+        "reason": "missing_history",
+        "question": "Which genuine professional skill or career record can you confirm with evidence? No experience, education or achievement will be invented.",
+        "requirement_id": null,
+        "fact_ids": [],
+        "blocking": true
+      },
+      {
+        "id": "0717e73d-bff9-5b92-a1b2-60e7706b32da",
+        "reason": "missing_history",
+        "question": "No employment or education history was supplied. Would you like to add evidence-backed history? It will not be invented.",
+        "requirement_id": null,
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "4e61509c-65a2-592c-b5ea-6e8e000c59a8",
+        "reason": "requirement_unknown",
+        "question": "For requirement 0cb67d6f-05e2-5ab2-8d32-abbd6d834664, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+        "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "9e71c215-e48e-5660-9226-a6d5cf8e152d",
+        "reason": "requirement_unknown",
+        "question": "For requirement ba0d0a60-0570-51b0-acd0-c4557b97be3a, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+        "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "6a8e6349-c52c-53df-b73f-600f05198f26",
+        "reason": "requirement_unknown",
+        "question": "For requirement 1f426d0f-5d32-5656-a736-6a72cde1eee0, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+        "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "5b4479d0-e4f4-5d89-82cf-6e95e9248c58",
+        "reason": "requirement_unknown",
+        "question": "For requirement da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+        "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "f53ea3c5-98d3-5515-98a5-a386c09d9c07",
+        "reason": "requirement_unknown",
+        "question": "For requirement e3a5aecc-f089-52d9-8bc0-8d3c9914eaac, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+        "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+        "fact_ids": [],
+        "blocking": false
+      },
+      {
+        "id": "9dc0fba6-dd19-5a5e-816e-7defbbd3356d",
+        "reason": "unsupported_requirement",
+        "question": "This requirement is outside supported rules. Review whether it is job-related; do not provide protected personal details.",
+        "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+        "fact_ids": [],
+        "blocking": false
+      }
+    ],
+    "practice": {
+      "questions": [
+        {
+          "id": "6d215969-0180-5d73-a42e-2f2a181d2d56",
+          "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+          "category": "technical",
+          "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+        },
+        {
+          "id": "51124250-5d91-50b6-b524-9a4212c5d629",
+          "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+          "category": "evidence_review",
+          "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+        },
+        {
+          "id": "3e696964-24e3-5697-a61a-7c77336ff621",
+          "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+          "category": "language",
+          "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+        },
+        {
+          "id": "642b74c4-f839-513d-8520-e9554569674a",
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "category": "technical",
+          "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+        },
+        {
+          "id": "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "category": "language",
+          "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+        },
+        {
+          "id": "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "category": "evidence_review",
+          "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+        },
+        {
+          "id": "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9",
+          "requirement_id": null,
+          "category": "behavioral",
+          "prompt": "Describe a task you actually completed: context, your role, choices and evidenced outcome. If none is available, use a clearly labeled hypothetical exercise; never invent metrics."
+        }
+      ],
+      "sessions": [
+        {
+          "order": 1,
+          "duration_minutes": 20,
+          "focus": "Evidence and clarification review",
+          "question_ids": [
+            "6d215969-0180-5d73-a42e-2f2a181d2d56",
+            "51124250-5d91-50b6-b524-9a4212c5d629",
+            "3e696964-24e3-5697-a61a-7c77336ff621",
+            "642b74c4-f839-513d-8520-e9554569674a",
+            "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+            "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+            "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+          ],
+          "deliverable": "List confirmed examples, genuine gaps and unanswered questions."
+        },
+        {
+          "order": 2,
+          "duration_minutes": 30,
+          "focus": "Job-relevant technical and language practice",
+          "question_ids": [
+            "6d215969-0180-5d73-a42e-2f2a181d2d56",
+            "51124250-5d91-50b6-b524-9a4212c5d629",
+            "3e696964-24e3-5697-a61a-7c77336ff621",
+            "642b74c4-f839-513d-8520-e9554569674a",
+            "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+            "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+            "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+          ],
+          "deliverable": "A small practice solution or explanation with assumptions clearly marked."
+        },
+        {
+          "order": 3,
+          "duration_minutes": 25,
+          "focus": "Mock interview and reflection",
+          "question_ids": [
+            "6d215969-0180-5d73-a42e-2f2a181d2d56",
+            "51124250-5d91-50b6-b524-9a4212c5d629",
+            "3e696964-24e3-5697-a61a-7c77336ff621",
+            "642b74c4-f839-513d-8520-e9554569674a",
+            "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+            "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+            "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+          ],
+          "deliverable": "Evidence-backed answers and a revised practice checklist, not invented career claims."
+        }
+      ]
+    },
+    "blocking_reasons": [
+      "A user-confirmed display name is required",
+      "At least one user-confirmed professional fact is required"
+    ],
+    "interpretation": "Declared evidence comparison, not a hiring prediction or verified competence judgment"
+  }
+}

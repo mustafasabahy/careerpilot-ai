@@ -1,0 +1,17 @@
+--- new-document
++++ version-1
+@@ -0,0 +1,14 @@
++COVER LETTER DRAFT — review required
++Dear hiring team,
++
++I am preparing an application for the role identified below.
++Role title from job source: "Synthetic Python Developer"
++Employer from job source: "Example Organization"
++The following statements from my profile are relevant for your review:
++- Skill: Python programming
++- Python programming proficiency: advanced
++- Language: English
++
++I would welcome a discussion of the role and the evidence behind these statements.
++Sincerely,
++Synthetic Candidate

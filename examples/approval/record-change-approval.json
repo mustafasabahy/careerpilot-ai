@@ -1,0 +1,123 @@
+{
+  "waiting": {
+    "review": {
+      "proposal": {
+        "id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+        "created_at": "2026-10-28T12:50:57.762525Z",
+        "thread_id": "d63092ac-8b14-5954-9d57-b079d5d5f330",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "a2b892c2-b65e-50d6-bbf8-f1b27af78a73",
+        "candidate_id": "5191847e-d8f1-5de2-bf0f-d73e038b5057",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.761476Z",
+        "application_sha256": "b3daa2f3718859c485dc8d82118a0c891e9f5fc016fce5628efdca9b48d6a286",
+        "target": null,
+        "adapter_id": "local-record-v1",
+        "content": {
+          "kind": "change_application",
+          "target_status": "withdrawn",
+          "reason": "User chose to stop this synthetic application"
+        },
+        "content_sha256": "b64e32aa846c909f404d20c8ba7ffb0ab82e3bea2ffba53592f7bceff4c9ba9a"
+      },
+      "status": "pending",
+      "decision": null,
+      "outcome": null,
+      "document_content": null
+    },
+    "paused": true,
+    "next_nodes": [
+      "human_review"
+    ]
+  },
+  "decision": {
+    "id": "0531654f-35ae-5d7a-ac9a-2dfdb8c5023a",
+    "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+    "thread_id": "d63092ac-8b14-5954-9d57-b079d5d5f330",
+    "proposal_version": 1,
+    "content_sha256": "b64e32aa846c909f404d20c8ba7ffb0ab82e3bea2ffba53592f7bceff4c9ba9a",
+    "decision": "approve",
+    "reason": "Synthetic explicit operator review"
+  },
+  "result": {
+    "review": {
+      "proposal": {
+        "id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+        "created_at": "2026-10-28T12:50:57.762525Z",
+        "thread_id": "d63092ac-8b14-5954-9d57-b079d5d5f330",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "application_id": "a2b892c2-b65e-50d6-bbf8-f1b27af78a73",
+        "candidate_id": "5191847e-d8f1-5de2-bf0f-d73e038b5057",
+        "job_id": "b4598750-4b80-561a-b9af-b5bc4b16ae92",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T13:50:57.761476Z",
+        "application_sha256": "b3daa2f3718859c485dc8d82118a0c891e9f5fc016fce5628efdca9b48d6a286",
+        "target": null,
+        "adapter_id": "local-record-v1",
+        "content": {
+          "kind": "change_application",
+          "target_status": "withdrawn",
+          "reason": "User chose to stop this synthetic application"
+        },
+        "content_sha256": "b64e32aa846c909f404d20c8ba7ffb0ab82e3bea2ffba53592f7bceff4c9ba9a"
+      },
+      "status": "applied",
+      "decision": {
+        "id": "0531654f-35ae-5d7a-ac9a-2dfdb8c5023a",
+        "created_at": "2026-10-28T12:50:57.767775Z",
+        "owner_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+        "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+        "thread_id": "d63092ac-8b14-5954-9d57-b079d5d5f330",
+        "proposal_version": 1,
+        "content_sha256": "b64e32aa846c909f404d20c8ba7ffb0ab82e3bea2ffba53592f7bceff4c9ba9a",
+        "decision": "approve",
+        "reason": "Synthetic explicit operator review"
+      },
+      "outcome": {
+        "id": "e66b9367-0457-4a65-9af1-7dc83f48cf94",
+        "created_at": "2026-10-28T12:50:57.771019Z",
+        "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+        "status": "applied",
+        "code": "record_updated",
+        "receipt_id": null
+      },
+      "document_content": null
+    },
+    "paused": false,
+    "next_nodes": []
+  },
+  "audit": [
+    {
+      "id": "bea426c9-f2db-579d-8170-c79539860b70",
+      "created_at": "2026-10-28T12:50:57.763215Z",
+      "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "proposed"
+    },
+    {
+      "id": "5dc2f417-4406-5bad-98ca-6caedf5068a5",
+      "created_at": "2026-10-28T12:50:57.768028Z",
+      "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "approved"
+    },
+    {
+      "id": "b47ea2ce-4dfe-5c92-bfa2-2d946e1a4702",
+      "created_at": "2026-10-28T12:50:57.770650Z",
+      "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "execution_claimed"
+    },
+    {
+      "id": "c8513f69-adf4-517a-b918-af9619f4e37d",
+      "created_at": "2026-10-28T12:50:57.771123Z",
+      "proposal_id": "43e6b097-2cc2-5123-9c39-8386b976dee5",
+      "actor_id": "afea4169-132a-5ae2-afec-7ead08111f25",
+      "action": "applied"
+    }
+  ]
+}

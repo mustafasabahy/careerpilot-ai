@@ -1,0 +1,168 @@
+{
+  "paused": {
+    "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+    "candidate_id": null,
+    "revision": 4,
+    "memory_ids": [
+      "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+      "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+      "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+      "facccb70-2a31-5047-8553-b298c27e64b9"
+    ],
+    "status": "paused",
+    "checkpoint_id": "1f1d2cb9-d324-6554-8000-a2b3a9353b67",
+    "next_nodes": [
+      "review_context"
+    ]
+  },
+  "reopened": {
+    "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+    "candidate_id": null,
+    "revision": 4,
+    "memory_ids": [
+      "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+      "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+      "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+      "facccb70-2a31-5047-8553-b298c27e64b9"
+    ],
+    "status": "paused",
+    "checkpoint_id": "1f1d2cb9-d324-6554-8000-a2b3a9353b67",
+    "next_nodes": [
+      "review_context"
+    ]
+  },
+  "resumed": {
+    "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+    "candidate_id": null,
+    "revision": 4,
+    "memory_ids": [
+      "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+      "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+      "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+      "facccb70-2a31-5047-8553-b298c27e64b9"
+    ],
+    "status": "completed",
+    "checkpoint_id": "1f1d2cb9-d337-66e0-8002-120eb83c2dc9",
+    "next_nodes": []
+  },
+  "history": [
+    {
+      "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+      "candidate_id": null,
+      "revision": 4,
+      "memory_ids": [
+        "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+        "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+        "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+        "facccb70-2a31-5047-8553-b298c27e64b9"
+      ],
+      "status": "completed",
+      "checkpoint_id": "1f1d2cb9-d337-66e0-8002-120eb83c2dc9",
+      "next_nodes": []
+    },
+    {
+      "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+      "candidate_id": null,
+      "revision": 4,
+      "memory_ids": [
+        "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+        "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+        "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+        "facccb70-2a31-5047-8553-b298c27e64b9"
+      ],
+      "status": "pending",
+      "checkpoint_id": "1f1d2cb9-d335-60de-8001-11572cdcbf72",
+      "next_nodes": [
+        "finish"
+      ]
+    },
+    {
+      "thread_id": "377b6093-bcca-57ea-9f05-20d934479600",
+      "candidate_id": null,
+      "revision": 4,
+      "memory_ids": [
+        "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+        "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+        "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+        "facccb70-2a31-5047-8553-b298c27e64b9"
+      ],
+      "status": "paused",
+      "checkpoint_id": "1f1d2cb9-d324-6554-8000-a2b3a9353b67",
+      "next_nodes": [
+        "review_context"
+      ]
+    }
+  ],
+  "context": {
+    "memories": [
+      {
+        "id": "5cbc5d1f-ccdd-520c-95e8-1196a314d1d4",
+        "owner_id": "fb2500c3-1c19-5805-a240-addaa496592b",
+        "version": 1,
+        "confirmed_at": "2026-10-28T12:32:18.263262Z",
+        "value": {
+          "kind": "location_preferences",
+          "locations": [
+            "Example City"
+          ],
+          "arrangements": [
+            "remote"
+          ]
+        },
+        "origin": "explicit_user_confirmation"
+      },
+      {
+        "id": "d2450486-c8ae-521f-8fb0-9b6810edbaca",
+        "owner_id": "fb2500c3-1c19-5805-a240-addaa496592b",
+        "version": 1,
+        "confirmed_at": "2026-10-28T12:32:18.264643Z",
+        "value": {
+          "kind": "career_fact",
+          "statement": "I maintain synthetic Python projects",
+          "evidence": [
+            {
+              "id": "72b031ec-7a1c-5d24-9f0e-bae39996e05a",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "synthetic:user-confirmed"
+            }
+          ]
+        },
+        "origin": "explicit_user_confirmation"
+      },
+      {
+        "id": "d6a43933-2232-5a59-ad9b-b57ec9b5f997",
+        "owner_id": "fb2500c3-1c19-5805-a240-addaa496592b",
+        "version": 1,
+        "confirmed_at": "2026-10-28T12:32:18.265316Z",
+        "value": {
+          "kind": "career_goal",
+          "description": "Practice evidence-based interview answers",
+          "target_date": null
+        },
+        "origin": "explicit_user_confirmation"
+      },
+      {
+        "id": "facccb70-2a31-5047-8553-b298c27e64b9",
+        "owner_id": "fb2500c3-1c19-5805-a240-addaa496592b",
+        "version": 1,
+        "confirmed_at": "2026-10-28T12:32:18.262026Z",
+        "value": {
+          "kind": "job_preferences",
+          "roles": [
+            "Python developer"
+          ],
+          "skills": [
+            "Python"
+          ]
+        },
+        "origin": "explicit_user_confirmation"
+      }
+    ],
+    "profile_facts": [],
+    "messages": [],
+    "omission_summary": "Non-authoritative context accounting: 0 omitted; 0 truncated. 0 eligible profile facts omitted for size.",
+    "authoritative_summary": false,
+    "trust": "data_only_no_permissions"
+  }
+}

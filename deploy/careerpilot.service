@@ -1,0 +1,22 @@
+[Unit]
+Description=CareerPilot single-host local service
+After=network.target
+[Service]
+User=careerpilot
+Group=careerpilot
+WorkingDirectory=/opt/careerpilot
+EnvironmentFile=/etc/careerpilot/production.env
+ExecStart=/opt/careerpilot/.venv/bin/careerpilot-server
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/careerpilot
+MemoryMax=1G
+TasksMax=128
+[Install]
+WantedBy=multi-user.target

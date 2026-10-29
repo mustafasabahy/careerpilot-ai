@@ -1,0 +1,247 @@
+{
+  "records": [
+    {
+      "job": {
+        "id": "407f6dd4-f42c-5d70-9a1e-ec62bb86bb9c",
+        "created_at": "2026-01-01T00:00:00Z",
+        "title": "Synthetic Python Developer",
+        "employer": "Example Organization",
+        "source": {
+          "name": "synthetic-fixtures",
+          "external_id": "complete",
+          "url": "https://example.test/jobs/complete?utm_source=local#details",
+          "retrieved_at": "2026-01-01T00:00:00Z"
+        },
+        "requirements": [
+          {
+            "id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "Python at intermediate level",
+            "category": "skill",
+            "mandatory": true,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "Work authorization explicitly declared",
+            "category": "eligibility",
+            "mandatory": true,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "English B2 preferred",
+            "category": "language",
+            "mandatory": false,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          }
+        ]
+      },
+      "definitions": [
+        {
+          "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+          "kind": "skill",
+          "name": "PYTHON",
+          "minimum_skill": "intermediate",
+          "minimum_language": null,
+          "expected": null
+        },
+        {
+          "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+          "kind": "work_authorization",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": true
+        },
+        {
+          "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+          "kind": "language",
+          "name": "English",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        }
+      ]
+    },
+    {
+      "job": {
+        "id": "8055700e-fb69-55b7-996d-a27a110f61ca",
+        "created_at": "2026-01-01T00:00:00Z",
+        "title": "Synthetic Python Developer",
+        "employer": "Example Organization",
+        "source": {
+          "name": "synthetic-fixtures",
+          "external_id": "mixed",
+          "url": "https://example.test/jobs/mixed?utm_source=local#details",
+          "retrieved_at": "2026-01-01T00:00:00Z"
+        },
+        "requirements": [
+          {
+            "id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "Python at intermediate level",
+            "category": "skill",
+            "mandatory": true,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "Work authorization explicitly declared",
+            "category": "eligibility",
+            "mandatory": true,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "English B2 preferred",
+            "category": "language",
+            "mandatory": false,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "SQL preferred",
+            "category": "skill",
+            "mandatory": false,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "German B2 preferred",
+            "category": "language",
+            "mandatory": false,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          },
+          {
+            "id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+            "created_at": "2026-01-01T00:00:00Z",
+            "description": "Leadership potential (unspecified importance)",
+            "category": "experience",
+            "mandatory": null,
+            "evidence": [
+              {
+                "id": "174b25cf-d90b-53e1-aa58-21df16537016",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "source_document",
+                "reference": "fixture:synthetic-job-source"
+              }
+            ]
+          }
+        ]
+      },
+      "definitions": [
+        {
+          "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+          "kind": "skill",
+          "name": "PYTHON",
+          "minimum_skill": "intermediate",
+          "minimum_language": null,
+          "expected": null
+        },
+        {
+          "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+          "kind": "work_authorization",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": true
+        },
+        {
+          "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+          "kind": "language",
+          "name": "English",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        },
+        {
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "kind": "skill",
+          "name": "SQL",
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        },
+        {
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "kind": "language",
+          "name": "German",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        },
+        {
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "kind": "unsupported",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      ]
+    }
+  ]
+}

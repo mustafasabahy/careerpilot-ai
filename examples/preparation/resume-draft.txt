@@ -1,0 +1,16 @@
+CV DRAFT — review required
+Synthetic Candidate
+Target role from job source: "Synthetic Python Developer" | "Example Organization"
+
+User-confirmed profile statements:
+- Skill: Python programming
+- Python programming proficiency: advanced
+- Language: English
+- English level: C1
+- Language: German
+- German level: A2
+- Software Developer | Example Labs | 2021-01-01 to 2024-01-01
+- Computing degree | Example Institute | 2017-01-01 to 2020-01-01
+- Example Systems Certificate | Example Training | issued 2022-01-01 | expiry not provided
+
+Only cited profile facts are included. Missing/unverified claims were not filled in.

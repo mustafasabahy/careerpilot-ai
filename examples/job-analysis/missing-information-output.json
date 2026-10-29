@@ -1,0 +1,155 @@
+{
+  "status": "needs_information",
+  "assessment_id": "fdc42892-8818-5d50-9ade-0d908de71b6d",
+  "job_id": "dd99f8fe-09f9-5725-8101-319f88db6370",
+  "candidate_id": "39873c0b-5e51-53b2-988d-28cf09930d2d",
+  "decision": "needs_review",
+  "rules": {
+    "version": "baseline-v1",
+    "aliases": [
+      {
+        "alias": "python programming",
+        "canonical": "python"
+      }
+    ],
+    "accepted_origins": [
+      "user_statement",
+      "source_document"
+    ]
+  },
+  "criteria": [
+    {
+      "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+      "importance": "hard",
+      "definition": {
+        "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+        "kind": "skill",
+        "name": "python",
+        "minimum_skill": "intermediate",
+        "minimum_language": null,
+        "expected": null
+      }
+    },
+    {
+      "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+      "importance": "hard",
+      "definition": {
+        "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+        "kind": "work_authorization",
+        "name": null,
+        "minimum_skill": null,
+        "minimum_language": null,
+        "expected": true
+      }
+    },
+    {
+      "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+      "importance": "soft",
+      "definition": {
+        "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+        "kind": "language",
+        "name": "english",
+        "minimum_skill": null,
+        "minimum_language": "B2",
+        "expected": null
+      }
+    },
+    {
+      "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+      "importance": "soft",
+      "definition": {
+        "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+        "kind": "skill",
+        "name": "sql",
+        "minimum_skill": null,
+        "minimum_language": null,
+        "expected": null
+      }
+    },
+    {
+      "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+      "importance": "soft",
+      "definition": {
+        "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+        "kind": "language",
+        "name": "german",
+        "minimum_skill": null,
+        "minimum_language": "B2",
+        "expected": null
+      }
+    },
+    {
+      "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+      "importance": "unspecified",
+      "definition": {
+        "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+        "kind": "unsupported",
+        "name": null,
+        "minimum_skill": null,
+        "minimum_language": null,
+        "expected": null
+      }
+    }
+  ],
+  "findings": [
+    {
+      "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+      "importance": "hard",
+      "outcome": "met",
+      "reason": "supported",
+      "evidence_ids": [
+        "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+      ]
+    },
+    {
+      "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+      "importance": "hard",
+      "outcome": "met",
+      "reason": "supported",
+      "evidence_ids": [
+        "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+      ]
+    },
+    {
+      "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+      "importance": "soft",
+      "outcome": "met",
+      "reason": "supported",
+      "evidence_ids": [
+        "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+      ]
+    },
+    {
+      "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+      "importance": "soft",
+      "outcome": "unknown",
+      "reason": "unverified",
+      "evidence_ids": []
+    },
+    {
+      "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+      "importance": "soft",
+      "outcome": "unmet",
+      "reason": "below_minimum",
+      "evidence_ids": [
+        "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+      ]
+    },
+    {
+      "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+      "importance": "unspecified",
+      "outcome": "unknown",
+      "reason": "unsupported_criterion",
+      "evidence_ids": []
+    }
+  ],
+  "counts": {
+    "hard_supported": 2,
+    "hard_gaps": 0,
+    "hard_unknown": 0,
+    "soft_supported": 1,
+    "soft_gaps": 1,
+    "soft_unknown": 1,
+    "unspecified": 1
+  }
+}

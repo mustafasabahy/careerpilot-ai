@@ -1,0 +1,11 @@
+Title: Python Developer
+Employer: Example Organization
+Required skill: Python (intermediate).
+Preferred skill: SQL.
+Required qualification: Computing degree or equivalent experience.
+Experience: at least 3 years of backend development.
+English B2 required.
+Location: Berlin.
+Arrangement: remote.
+Arrangement: onsite.
+Employment: full-time.

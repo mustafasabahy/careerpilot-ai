@@ -1,0 +1,742 @@
+{
+  "integration_mode": "synthetic; external effects simulated",
+  "analysis": {
+    "status": "completed",
+    "assessment_id": "c12bcf75-8c95-5b4d-913e-d77a8a89eccc",
+    "job_id": "4f5b0a5b-95d4-5ce8-b967-d40d5ff71848",
+    "candidate_id": "9997012a-6428-4f72-aaf2-4cd5135fdcc8",
+    "decision": "eligible",
+    "rules": {
+      "version": "baseline-v1",
+      "aliases": [
+        {
+          "alias": "python programming",
+          "canonical": "python"
+        }
+      ],
+      "accepted_origins": [
+        "user_statement",
+        "source_document"
+      ]
+    },
+    "criteria": [
+      {
+        "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+        "importance": "hard",
+        "definition": {
+          "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+          "kind": "skill",
+          "name": "python",
+          "minimum_skill": "intermediate",
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+        "importance": "hard",
+        "definition": {
+          "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+          "kind": "work_authorization",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": true
+        }
+      },
+      {
+        "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+        "importance": "soft",
+        "definition": {
+          "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+          "kind": "language",
+          "name": "english",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        }
+      }
+    ],
+    "findings": [
+      {
+        "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+        "importance": "hard",
+        "outcome": "met",
+        "reason": "supported",
+        "evidence_ids": [
+          "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+        ]
+      },
+      {
+        "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+        "importance": "hard",
+        "outcome": "met",
+        "reason": "supported",
+        "evidence_ids": [
+          "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+        ]
+      },
+      {
+        "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+        "importance": "soft",
+        "outcome": "met",
+        "reason": "supported",
+        "evidence_ids": [
+          "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+        ]
+      }
+    ],
+    "counts": {
+      "hard_supported": 2,
+      "hard_gaps": 0,
+      "hard_unknown": 0,
+      "soft_supported": 1,
+      "soft_gaps": 0,
+      "soft_unknown": 0,
+      "unspecified": 0
+    }
+  },
+  "preparation": {
+    "status": "drafts_created",
+    "record": {
+      "id": "23b83cdb-6f4d-4a63-bcdd-91b98738c25c",
+      "created_at": "2026-10-28T16:48:09.602576Z",
+      "candidate_id": "9997012a-6428-4f72-aaf2-4cd5135fdcc8",
+      "job_id": "4f5b0a5b-95d4-5ce8-b967-d40d5ff71848",
+      "assessment_id": "c12bcf75-8c95-5b4d-913e-d77a8a89eccc",
+      "request_sha256": "9c23f19b2c3c48b704ce8b09e242c1843800f63bfdaa40cf785746cbb990ca9e",
+      "original_resume_version_id": null,
+      "planner_provider": "mock",
+      "planner_model": "fact-plan-v1",
+      "renderer_version": "fact-render-v1",
+      "planner_prompt_version": "fact-selection-v1",
+      "intelligence": {
+        "candidate_id": "9997012a-6428-4f72-aaf2-4cd5135fdcc8",
+        "job_id": "4f5b0a5b-95d4-5ce8-b967-d40d5ff71848",
+        "assessment_id": "c12bcf75-8c95-5b4d-913e-d77a8a89eccc",
+        "decision": "eligible",
+        "counts": {
+          "hard_supported": 2,
+          "hard_gaps": 0,
+          "hard_unknown": 0,
+          "soft_supported": 1,
+          "soft_gaps": 0,
+          "soft_unknown": 0,
+          "unspecified": 0
+        },
+        "rules": {
+          "version": "baseline-v1",
+          "aliases": [
+            {
+              "alias": "python programming",
+              "canonical": "python"
+            }
+          ],
+          "accepted_origins": [
+            "user_statement",
+            "source_document"
+          ]
+        },
+        "criteria": [
+          {
+            "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+            "importance": "hard",
+            "definition": {
+              "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+              "kind": "skill",
+              "name": "python",
+              "minimum_skill": "intermediate",
+              "minimum_language": null,
+              "expected": null
+            }
+          },
+          {
+            "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+            "importance": "hard",
+            "definition": {
+              "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+              "kind": "work_authorization",
+              "name": null,
+              "minimum_skill": null,
+              "minimum_language": null,
+              "expected": true
+            }
+          },
+          {
+            "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+            "importance": "soft",
+            "definition": {
+              "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+              "kind": "language",
+              "name": "english",
+              "minimum_skill": null,
+              "minimum_language": "B2",
+              "expected": null
+            }
+          }
+        ],
+        "facts": [
+          {
+            "id": "680b33d5-f20e-50c5-8241-c5d240a0ad8a",
+            "kind": "name",
+            "record_id": null,
+            "field_path": "display_name",
+            "text": "Synthetic Candidate",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "de22bf56-9c90-5988-8f4e-83cc24128800",
+            "kind": "skill",
+            "record_id": "f4d48804-dd0b-56e0-b976-23aadc00ced7",
+            "field_path": "skills/f4d48804-dd0b-56e0-b976-23aadc00ced7/name",
+            "text": "Skill: Python programming",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "27a3efb1-6bce-5230-808e-337deec69921",
+            "kind": "skill",
+            "record_id": "f4d48804-dd0b-56e0-b976-23aadc00ced7",
+            "field_path": "skills/f4d48804-dd0b-56e0-b976-23aadc00ced7/proficiency",
+            "text": "Python programming proficiency: advanced",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "c6185406-1e85-5b90-b7a3-52832e13506e",
+            "kind": "skill",
+            "record_id": "ef008422-09b6-598b-884e-93ed2635a0ce",
+            "field_path": "skills/ef008422-09b6-598b-884e-93ed2635a0ce/name",
+            "text": "Skill: SQL",
+            "verification": "unverified",
+            "evidence": [
+              {
+                "id": "61f455e8-1e10-55c1-908d-bde2d0be4b5a",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "ai_inference",
+                "reference": "fixture:unreviewed-inference"
+              }
+            ]
+          },
+          {
+            "id": "4ca4cafc-ff09-510e-8f32-58d657253873",
+            "kind": "skill",
+            "record_id": "ef008422-09b6-598b-884e-93ed2635a0ce",
+            "field_path": "skills/ef008422-09b6-598b-884e-93ed2635a0ce/proficiency",
+            "text": "SQL proficiency: expert",
+            "verification": "unverified",
+            "evidence": [
+              {
+                "id": "61f455e8-1e10-55c1-908d-bde2d0be4b5a",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "ai_inference",
+                "reference": "fixture:unreviewed-inference"
+              }
+            ]
+          },
+          {
+            "id": "a2244c2f-dd6d-5f3d-974d-3444ca8e6f91",
+            "kind": "language",
+            "record_id": "ddd45210-832f-52cb-a216-45a682462833",
+            "field_path": "languages/ddd45210-832f-52cb-a216-45a682462833/name",
+            "text": "Language: English",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "c97a2606-b685-59d4-b72d-8b9648226c52",
+            "kind": "language",
+            "record_id": "ddd45210-832f-52cb-a216-45a682462833",
+            "field_path": "languages/ddd45210-832f-52cb-a216-45a682462833/proficiency",
+            "text": "English level: C1",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "a9cb634a-18b5-57d3-8b20-8c18fde550d0",
+            "kind": "language",
+            "record_id": "acc18ac7-859e-5d57-b046-0c5bd2f23240",
+            "field_path": "languages/acc18ac7-859e-5d57-b046-0c5bd2f23240/name",
+            "text": "Language: German",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "e4b46479-3f19-5127-a111-f41e5c9038d5",
+            "kind": "language",
+            "record_id": "acc18ac7-859e-5d57-b046-0c5bd2f23240",
+            "field_path": "languages/acc18ac7-859e-5d57-b046-0c5bd2f23240/proficiency",
+            "text": "German level: A2",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          },
+          {
+            "id": "830423f2-addc-50c7-8a19-9148b45d126a",
+            "kind": "authorization",
+            "record_id": null,
+            "field_path": "work_authorized",
+            "text": "Declared work authorization: true",
+            "verification": "user_confirmed",
+            "evidence": [
+              {
+                "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+                "created_at": "2026-01-01T00:00:00Z",
+                "origin": "user_statement",
+                "reference": "fixture:synthetic-user-statement"
+              }
+            ]
+          }
+        ],
+        "explanations": [
+          {
+            "finding": {
+              "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+              "importance": "hard",
+              "outcome": "met",
+              "reason": "supported",
+              "evidence_ids": [
+                "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+              ]
+            },
+            "source_description": "Python at intermediate level",
+            "explanation": "The declared profile evidence supports the configured requirement rule.",
+            "fact_ids": [
+              "de22bf56-9c90-5988-8f4e-83cc24128800",
+              "27a3efb1-6bce-5230-808e-337deec69921"
+            ]
+          },
+          {
+            "finding": {
+              "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+              "importance": "hard",
+              "outcome": "met",
+              "reason": "supported",
+              "evidence_ids": [
+                "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+              ]
+            },
+            "source_description": "Work authorization explicitly declared",
+            "explanation": "The declared profile evidence supports the configured requirement rule.",
+            "fact_ids": [
+              "830423f2-addc-50c7-8a19-9148b45d126a"
+            ]
+          },
+          {
+            "finding": {
+              "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+              "importance": "soft",
+              "outcome": "met",
+              "reason": "supported",
+              "evidence_ids": [
+                "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+              ]
+            },
+            "source_description": "English B2 preferred",
+            "explanation": "The declared profile evidence supports the configured requirement rule.",
+            "fact_ids": [
+              "a2244c2f-dd6d-5f3d-974d-3444ca8e6f91",
+              "c97a2606-b685-59d4-b72d-8b9648226c52"
+            ]
+          }
+        ],
+        "clarifications": [
+          {
+            "id": "14eeb8e5-5442-594e-ae56-9acca76fe3d3",
+            "reason": "unverified_fact",
+            "question": "Can you confirm the profile statement at skills/ef008422-09b6-598b-884e-93ed2635a0ce/name and supply user-confirmed supporting evidence?",
+            "requirement_id": null,
+            "fact_ids": [
+              "c6185406-1e85-5b90-b7a3-52832e13506e"
+            ],
+            "blocking": false
+          },
+          {
+            "id": "489cf142-d035-5d8f-a578-9eec457edbe0",
+            "reason": "unverified_fact",
+            "question": "Can you confirm the profile statement at skills/ef008422-09b6-598b-884e-93ed2635a0ce/proficiency and supply user-confirmed supporting evidence?",
+            "requirement_id": null,
+            "fact_ids": [
+              "4ca4cafc-ff09-510e-8f32-58d657253873"
+            ],
+            "blocking": false
+          },
+          {
+            "id": "cde6d6bf-4954-514f-acfc-78e924fc3990",
+            "reason": "missing_history",
+            "question": "No employment or education history was supplied. Would you like to add evidence-backed history? It will not be invented.",
+            "requirement_id": null,
+            "fact_ids": [],
+            "blocking": false
+          }
+        ],
+        "practice": {
+          "questions": [
+            {
+              "id": "c45652b4-dd22-5cbe-97f8-269b0df9fb94",
+              "requirement_id": "55ed1266-a6a8-5820-8049-12f5a338832c",
+              "category": "technical",
+              "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+            },
+            {
+              "id": "4ffeca38-27cb-5c48-8d68-e81ec9dee30b",
+              "requirement_id": "57fbd6e7-7df9-5492-a611-d9071d3cb60e",
+              "category": "evidence_review",
+              "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+            },
+            {
+              "id": "88965abf-6ab1-59b0-8f40-e739ccfd6c85",
+              "requirement_id": "f245b82d-cf65-5d30-bb46-d87ba07e0b90",
+              "category": "language",
+              "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+            },
+            {
+              "id": "ad38a623-0d70-5d44-bf9e-27099cf19e79",
+              "requirement_id": null,
+              "category": "behavioral",
+              "prompt": "Describe a task you actually completed: context, your role, choices and evidenced outcome. If none is available, use a clearly labeled hypothetical exercise; never invent metrics."
+            }
+          ],
+          "sessions": [
+            {
+              "order": 1,
+              "duration_minutes": 20,
+              "focus": "Evidence and clarification review",
+              "question_ids": [
+                "c45652b4-dd22-5cbe-97f8-269b0df9fb94",
+                "4ffeca38-27cb-5c48-8d68-e81ec9dee30b",
+                "88965abf-6ab1-59b0-8f40-e739ccfd6c85",
+                "ad38a623-0d70-5d44-bf9e-27099cf19e79"
+              ],
+              "deliverable": "List confirmed examples, genuine gaps and unanswered questions."
+            },
+            {
+              "order": 2,
+              "duration_minutes": 30,
+              "focus": "Job-relevant technical and language practice",
+              "question_ids": [
+                "c45652b4-dd22-5cbe-97f8-269b0df9fb94",
+                "4ffeca38-27cb-5c48-8d68-e81ec9dee30b",
+                "88965abf-6ab1-59b0-8f40-e739ccfd6c85",
+                "ad38a623-0d70-5d44-bf9e-27099cf19e79"
+              ],
+              "deliverable": "A small practice solution or explanation with assumptions clearly marked."
+            },
+            {
+              "order": 3,
+              "duration_minutes": 25,
+              "focus": "Mock interview and reflection",
+              "question_ids": [
+                "c45652b4-dd22-5cbe-97f8-269b0df9fb94",
+                "4ffeca38-27cb-5c48-8d68-e81ec9dee30b",
+                "88965abf-6ab1-59b0-8f40-e739ccfd6c85",
+                "ad38a623-0d70-5d44-bf9e-27099cf19e79"
+              ],
+              "deliverable": "Evidence-backed answers and a revised practice checklist, not invented career claims."
+            }
+          ]
+        },
+        "blocking_reasons": [],
+        "interpretation": "Declared evidence comparison, not a hiring prediction or verified competence judgment"
+      },
+      "documents": [
+        {
+          "kind": "resume",
+          "document_id": "5eb9e4a9-36b9-537f-8431-af5b325afc71",
+          "version_id": "2fae56e3-ceb3-5518-ab04-de2e258af46c",
+          "previous_version_id": null,
+          "fact_ids": [
+            "de22bf56-9c90-5988-8f4e-83cc24128800",
+            "27a3efb1-6bce-5230-808e-337deec69921",
+            "a2244c2f-dd6d-5f3d-974d-3444ca8e6f91",
+            "c97a2606-b685-59d4-b72d-8b9648226c52",
+            "680b33d5-f20e-50c5-8241-c5d240a0ad8a"
+          ],
+          "content_sha256": "5f4545609a50984b1fbf07dc9d5c0a22a3d89be518e78908f6b17cecca8c88fd",
+          "review_required": true
+        },
+        {
+          "kind": "cover_letter",
+          "document_id": "6d81751d-23c1-52f9-976f-8fde5b868f9e",
+          "version_id": "8a4b87ab-7aa3-5de5-8719-32a6a272e8c0",
+          "previous_version_id": null,
+          "fact_ids": [
+            "de22bf56-9c90-5988-8f4e-83cc24128800",
+            "27a3efb1-6bce-5230-808e-337deec69921",
+            "a2244c2f-dd6d-5f3d-974d-3444ca8e6f91",
+            "680b33d5-f20e-50c5-8241-c5d240a0ad8a"
+          ],
+          "content_sha256": "3860bba3414a8f2390bbb54f166bf80c9a1e040b30e49fa55b1e56e1c7de4629",
+          "review_required": true
+        }
+      ]
+    },
+    "drafts": [
+      {
+        "version_id": "2fae56e3-ceb3-5518-ab04-de2e258af46c",
+        "kind": "resume",
+        "content": "CV DRAFT \u2014 review required\nSynthetic Candidate\nTarget role from job source: \"Synthetic Python Developer\" | \"Example Organization\"\n\nUser-confirmed profile statements:\n- Skill: Python programming\n- Python programming proficiency: advanced\n- Language: English\n- English level: C1\n\nOnly cited profile facts are included. Missing/unverified claims were not filled in.",
+        "changes": "--- new-document\n+++ version-1\n@@ -0,0 +1,11 @@\n+CV DRAFT \u2014 review required\n+Synthetic Candidate\n+Target role from job source: \"Synthetic Python Developer\" | \"Example Organization\"\n+\n+User-confirmed profile statements:\n+- Skill: Python programming\n+- Python programming proficiency: advanced\n+- Language: English\n+- English level: C1\n+\n+Only cited profile facts are included. Missing/unverified claims were not filled in."
+      },
+      {
+        "version_id": "8a4b87ab-7aa3-5de5-8719-32a6a272e8c0",
+        "kind": "cover_letter",
+        "content": "COVER LETTER DRAFT \u2014 review required\nDear hiring team,\n\nI am preparing an application for the role identified below.\nRole title from job source: \"Synthetic Python Developer\"\nEmployer from job source: \"Example Organization\"\nThe following statements from my profile are relevant for your review:\n- Skill: Python programming\n- Python programming proficiency: advanced\n- Language: English\n\nI would welcome a discussion of the role and the evidence behind these statements.\nSincerely,\nSynthetic Candidate",
+        "changes": "--- new-document\n+++ version-1\n@@ -0,0 +1,14 @@\n+COVER LETTER DRAFT \u2014 review required\n+Dear hiring team,\n+\n+I am preparing an application for the role identified below.\n+Role title from job source: \"Synthetic Python Developer\"\n+Employer from job source: \"Example Organization\"\n+The following statements from my profile are relevant for your review:\n+- Skill: Python programming\n+- Python programming proficiency: advanced\n+- Language: English\n+\n+I would welcome a discussion of the role and the evidence behind these statements.\n+Sincerely,\n+Synthetic Candidate"
+      }
+    ]
+  },
+  "waiting_for_approval": {
+    "review": {
+      "proposal": {
+        "id": "163561ee-48bb-4b1c-915c-9ee89d2a1d56",
+        "created_at": "2026-10-28T16:48:09.623976Z",
+        "thread_id": "1c2c9d1f-f44e-457e-a9f2-92ec189b292a",
+        "owner_id": "1f53cc42-de08-4b20-a236-925464b023f5",
+        "application_id": "8edc0887-dd60-4328-903c-4209b301635d",
+        "candidate_id": "9997012a-6428-4f72-aaf2-4cd5135fdcc8",
+        "job_id": "4f5b0a5b-95d4-5ce8-b967-d40d5ff71848",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T17:48:09.622354Z",
+        "application_sha256": "1406b945623cc744e6060540638de054ad7612f5459f4766c35a13a1d2afd3c5",
+        "target": {
+          "id": "d31ff1fb-915d-589b-8c31-ebcc8b6edea2",
+          "kind": "recruiter_message",
+          "label": "Simulated recruiter",
+          "route_key": "recruiter@example.invalid",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "recruiter_message",
+          "target_id": "d31ff1fb-915d-589b-8c31-ebcc8b6edea2",
+          "subject": "Synthetic manager demo",
+          "body": "A synthetic evidence-supported role inquiry, simulated only."
+        },
+        "content_sha256": "85fea932b999651b6ae9dc3686c5e3d02cff341a788d9bffc76e557e09a163c3"
+      },
+      "status": "pending",
+      "decision": null,
+      "outcome": null,
+      "document_content": null
+    },
+    "paused": true,
+    "next_nodes": [
+      "human_review"
+    ]
+  },
+  "resumed": {
+    "review": {
+      "proposal": {
+        "id": "163561ee-48bb-4b1c-915c-9ee89d2a1d56",
+        "created_at": "2026-10-28T16:48:09.623976Z",
+        "thread_id": "1c2c9d1f-f44e-457e-a9f2-92ec189b292a",
+        "owner_id": "1f53cc42-de08-4b20-a236-925464b023f5",
+        "application_id": "8edc0887-dd60-4328-903c-4209b301635d",
+        "candidate_id": "9997012a-6428-4f72-aaf2-4cd5135fdcc8",
+        "job_id": "4f5b0a5b-95d4-5ce8-b967-d40d5ff71848",
+        "version": 1,
+        "previous_proposal_id": null,
+        "expires_at": "2026-10-28T17:48:09.622354Z",
+        "application_sha256": "1406b945623cc744e6060540638de054ad7612f5459f4766c35a13a1d2afd3c5",
+        "target": {
+          "id": "d31ff1fb-915d-589b-8c31-ebcc8b6edea2",
+          "kind": "recruiter_message",
+          "label": "Simulated recruiter",
+          "route_key": "recruiter@example.invalid",
+          "revision": 1
+        },
+        "adapter_id": "simulated-actions-v1",
+        "content": {
+          "kind": "recruiter_message",
+          "target_id": "d31ff1fb-915d-589b-8c31-ebcc8b6edea2",
+          "subject": "Synthetic manager demo",
+          "body": "A synthetic evidence-supported role inquiry, simulated only."
+        },
+        "content_sha256": "85fea932b999651b6ae9dc3686c5e3d02cff341a788d9bffc76e557e09a163c3"
+      },
+      "status": "simulated",
+      "decision": {
+        "id": "f7456ed3-0b8c-45e5-998b-404f057908e2",
+        "created_at": "2026-10-28T16:48:09.633998Z",
+        "owner_id": "1f53cc42-de08-4b20-a236-925464b023f5",
+        "actor_id": "1f53cc42-de08-4b20-a236-925464b023f5",
+        "proposal_id": "163561ee-48bb-4b1c-915c-9ee89d2a1d56",
+        "thread_id": "1c2c9d1f-f44e-457e-a9f2-92ec189b292a",
+        "proposal_version": 1,
+        "content_sha256": "85fea932b999651b6ae9dc3686c5e3d02cff341a788d9bffc76e557e09a163c3",
+        "decision": "approve",
+        "reason": null
+      },
+      "outcome": {
+        "id": "5b6ad81c-8e60-4e54-9180-4fb46f3c7c80",
+        "created_at": "2026-10-28T16:48:09.638457Z",
+        "proposal_id": "163561ee-48bb-4b1c-915c-9ee89d2a1d56",
+        "status": "simulated",
+        "code": "simulated_effect",
+        "receipt_id": "8fd3f449-b4ac-520c-8d4c-dc18f6dc1086"
+      },
+      "document_content": null
+    },
+    "paused": false,
+    "next_nodes": []
+  },
+  "effects_after_repeated_recovery": 1,
+  "ambiguous_result": "unknown",
+  "total_effects_for_two_distinct_proposals": 2,
+  "simulator_receipt_for_unknown": "54bca96f-b1d5-567b-a4dd-8dc68bd5e1cb",
+  "retry": {
+    "attempts": 2,
+    "answer": 42,
+    "counted_model_calls": 2
+  },
+  "evaluation": {
+    "dataset_version": "careerpilot-eval-v1",
+    "dataset_sha256": "61163b50681e689763b29c83e8204991190abab0fe64b2899c0fc4ddddbfa182",
+    "passed": 12,
+    "total": 12,
+    "results": [
+      {
+        "id": "extraction",
+        "passed": true,
+        "observed": {
+          "title": "Python Developer",
+          "missing_preserved": true,
+          "contradiction_preserved": true
+        }
+      },
+      {
+        "id": "missing",
+        "passed": true,
+        "observed": {
+          "title": "Python Developer",
+          "missing_preserved": true,
+          "contradiction_preserved": true
+        }
+      },
+      {
+        "id": "contradiction",
+        "passed": true,
+        "observed": {
+          "title": "Python Developer",
+          "missing_preserved": true,
+          "contradiction_preserved": true
+        }
+      },
+      {
+        "id": "evidence_fit",
+        "passed": true,
+        "observed": {
+          "evidence_supported": true
+        }
+      },
+      {
+        "id": "unsupported_claim",
+        "passed": true,
+        "observed": {
+          "rejected": true
+        }
+      },
+      {
+        "id": "prompt_injection",
+        "passed": true,
+        "observed": {
+          "rejected": true
+        }
+      },
+      {
+        "id": "empty_search",
+        "passed": true,
+        "observed": {
+          "count": 0
+        }
+      },
+      {
+        "id": "duplicate_search",
+        "passed": true,
+        "observed": {
+          "deduplicated": true
+        }
+      },
+      {
+        "id": "format_failure",
+        "passed": true,
+        "observed": {
+          "rejected": true
+        }
+      },
+      {
+        "id": "tool_error",
+        "passed": true,
+        "observed": {
+          "denied": true
+        }
+      },
+      {
+        "id": "approval_safety",
+        "passed": true,
+        "observed": {
+          "unapproved_effects": 0
+        }
+      },
+      {
+        "id": "recovery",
+        "passed": true,
+        "observed": {
+          "effects": 1,
+          "status": "simulated"
+        }
+      }
+    ]
+  }
+}

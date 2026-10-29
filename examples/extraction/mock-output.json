@@ -1,0 +1,359 @@
+{
+  "status": "requires_review",
+  "extraction": {
+    "provenance": {
+      "document_id": "3e65e741-0140-5cc2-a87b-a7cc2f8f3445",
+      "source_sha256": "b943ef31fc8345ca0c185113a653397419e5c031e6a6f267f1322b94e255b035",
+      "provider": "mock",
+      "model": "fixture-v1",
+      "prompt_version": "job-extraction-v1",
+      "received_at": "2026-01-01T00:00:00Z",
+      "trust": "unreviewed_inference"
+    },
+    "extraction": {
+      "title": {
+        "state": "present",
+        "value": "Python Developer",
+        "evidence": [
+          {
+            "quote": "Title: Python Developer"
+          }
+        ],
+        "alternatives": []
+      },
+      "employer": {
+        "state": "present",
+        "value": "Example Organization",
+        "evidence": [
+          {
+            "quote": "Employer: Example Organization"
+          }
+        ],
+        "alternatives": []
+      },
+      "skills": [
+        {
+          "name": {
+            "state": "present",
+            "value": "Python",
+            "evidence": [
+              {
+                "quote": "Required skill: Python (intermediate)."
+              }
+            ],
+            "alternatives": []
+          },
+          "minimum_proficiency": {
+            "state": "present",
+            "value": "intermediate",
+            "evidence": [
+              {
+                "quote": "Required skill: Python (intermediate)."
+              }
+            ],
+            "alternatives": []
+          },
+          "mandatory": {
+            "state": "present",
+            "value": true,
+            "evidence": [
+              {
+                "quote": "Required skill: Python (intermediate)."
+              }
+            ],
+            "alternatives": []
+          }
+        },
+        {
+          "name": {
+            "state": "present",
+            "value": "SQL",
+            "evidence": [
+              {
+                "quote": "Preferred skill: SQL."
+              }
+            ],
+            "alternatives": []
+          },
+          "minimum_proficiency": {
+            "state": "missing",
+            "value": null,
+            "evidence": [],
+            "alternatives": []
+          },
+          "mandatory": {
+            "state": "present",
+            "value": false,
+            "evidence": [
+              {
+                "quote": "Preferred skill: SQL."
+              }
+            ],
+            "alternatives": []
+          }
+        }
+      ],
+      "qualifications": [
+        {
+          "description": {
+            "state": "present",
+            "value": "Computing degree or equivalent experience",
+            "evidence": [
+              {
+                "quote": "Required qualification: Computing degree or equivalent experience."
+              }
+            ],
+            "alternatives": []
+          },
+          "mandatory": {
+            "state": "present",
+            "value": true,
+            "evidence": [
+              {
+                "quote": "Required qualification: Computing degree or equivalent experience."
+              }
+            ],
+            "alternatives": []
+          }
+        }
+      ],
+      "experience": [
+        {
+          "description": {
+            "state": "present",
+            "value": "backend development",
+            "evidence": [
+              {
+                "quote": "Experience: at least 3 years of backend development."
+              }
+            ],
+            "alternatives": []
+          },
+          "minimum_years": {
+            "state": "present",
+            "value": 3.0,
+            "evidence": [
+              {
+                "quote": "Experience: at least 3 years of backend development."
+              }
+            ],
+            "alternatives": []
+          },
+          "mandatory": {
+            "state": "missing",
+            "value": null,
+            "evidence": [],
+            "alternatives": []
+          }
+        }
+      ],
+      "languages": [
+        {
+          "name": {
+            "state": "present",
+            "value": "English",
+            "evidence": [
+              {
+                "quote": "English B2 required."
+              }
+            ],
+            "alternatives": []
+          },
+          "minimum_level": {
+            "state": "present",
+            "value": "B2",
+            "evidence": [
+              {
+                "quote": "English B2 required."
+              }
+            ],
+            "alternatives": []
+          },
+          "mandatory": {
+            "state": "present",
+            "value": true,
+            "evidence": [
+              {
+                "quote": "English B2 required."
+              }
+            ],
+            "alternatives": []
+          }
+        }
+      ],
+      "location": {
+        "state": "present",
+        "value": "Berlin",
+        "evidence": [
+          {
+            "quote": "Location: Berlin."
+          }
+        ],
+        "alternatives": []
+      },
+      "work_arrangement": {
+        "state": "conflicting",
+        "value": null,
+        "evidence": [
+          {
+            "quote": "Arrangement: remote."
+          },
+          {
+            "quote": "Arrangement: onsite."
+          }
+        ],
+        "alternatives": [
+          "remote",
+          "onsite"
+        ]
+      },
+      "employment_type": {
+        "state": "present",
+        "value": "full_time",
+        "evidence": [
+          {
+            "quote": "Employment: full-time."
+          }
+        ],
+        "alternatives": []
+      },
+      "warnings": [
+        "contradictory_information",
+        "missing_information"
+      ]
+    }
+  },
+  "analysis": {
+    "status": "needs_information",
+    "assessment_id": "a13814e7-f1fb-58d6-957c-a93829d0c879",
+    "job_id": "28f74a2b-0c56-56ac-8965-5524827e0ab1",
+    "candidate_id": "39873c0b-5e51-53b2-988d-28cf09930d2d",
+    "decision": "needs_review",
+    "rules": {
+      "version": "baseline-v1",
+      "aliases": [
+        {
+          "alias": "python programming",
+          "canonical": "python"
+        }
+      ],
+      "accepted_origins": [
+        "user_statement",
+        "source_document"
+      ]
+    },
+    "criteria": [
+      {
+        "requirement_id": "cd120dc3-7d64-5ef2-a663-132fc425659b",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "cd120dc3-7d64-5ef2-a663-132fc425659b",
+          "kind": "skill",
+          "name": "python",
+          "minimum_skill": "intermediate",
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "d8f23fd5-e79d-515b-8468-7b6058d2f298",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "d8f23fd5-e79d-515b-8468-7b6058d2f298",
+          "kind": "skill",
+          "name": "sql",
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "7d85c28e-85fc-5807-b6c4-ee6fe59fe69b",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "7d85c28e-85fc-5807-b6c4-ee6fe59fe69b",
+          "kind": "unsupported",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "deb4dab0-398b-5e12-b535-dc848b3bb796",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "deb4dab0-398b-5e12-b535-dc848b3bb796",
+          "kind": "unsupported",
+          "name": null,
+          "minimum_skill": null,
+          "minimum_language": null,
+          "expected": null
+        }
+      },
+      {
+        "requirement_id": "86842b85-66dc-56b6-8c46-2397b43440dd",
+        "importance": "unspecified",
+        "definition": {
+          "requirement_id": "86842b85-66dc-56b6-8c46-2397b43440dd",
+          "kind": "language",
+          "name": "english",
+          "minimum_skill": null,
+          "minimum_language": "B2",
+          "expected": null
+        }
+      }
+    ],
+    "findings": [
+      {
+        "requirement_id": "cd120dc3-7d64-5ef2-a663-132fc425659b",
+        "importance": "unspecified",
+        "outcome": "met",
+        "reason": "supported",
+        "evidence_ids": [
+          "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+        ]
+      },
+      {
+        "requirement_id": "d8f23fd5-e79d-515b-8468-7b6058d2f298",
+        "importance": "unspecified",
+        "outcome": "unknown",
+        "reason": "unverified",
+        "evidence_ids": []
+      },
+      {
+        "requirement_id": "7d85c28e-85fc-5807-b6c4-ee6fe59fe69b",
+        "importance": "unspecified",
+        "outcome": "unknown",
+        "reason": "unsupported_criterion",
+        "evidence_ids": []
+      },
+      {
+        "requirement_id": "deb4dab0-398b-5e12-b535-dc848b3bb796",
+        "importance": "unspecified",
+        "outcome": "unknown",
+        "reason": "unsupported_criterion",
+        "evidence_ids": []
+      },
+      {
+        "requirement_id": "86842b85-66dc-56b6-8c46-2397b43440dd",
+        "importance": "unspecified",
+        "outcome": "met",
+        "reason": "supported",
+        "evidence_ids": [
+          "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+        ]
+      }
+    ],
+    "counts": {
+      "hard_supported": 0,
+      "hard_gaps": 0,
+      "hard_unknown": 0,
+      "soft_supported": 0,
+      "soft_gaps": 0,
+      "soft_unknown": 0,
+      "unspecified": 5
+    }
+  },
+  "review_reason": "unreviewed_requirements"
+}

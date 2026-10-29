@@ -1,0 +1,621 @@
+{
+  "status": "drafts_created",
+  "record": {
+    "id": "70ecab42-b6b7-5b87-89e1-e520960bdad2",
+    "created_at": "2026-01-01T00:00:00Z",
+    "candidate_id": "a6a5a446-9024-5359-b3b4-af0f913d33d4",
+    "job_id": "dd99f8fe-09f9-5725-8101-319f88db6370",
+    "assessment_id": "3715571b-82cf-56fa-ba74-34cd63c92da3",
+    "request_sha256": "27f84e1e393af716eaa3b354ce81761f875f1a1d2654129d98f1cf951f2e0d8f",
+    "original_resume_version_id": "48a8da48-b5fc-55a2-9f7e-2ee98ba53770",
+    "planner_provider": "mock",
+    "planner_model": "fact-plan-v1",
+    "renderer_version": "fact-render-v1",
+    "planner_prompt_version": "fact-selection-v1",
+    "intelligence": {
+      "candidate_id": "a6a5a446-9024-5359-b3b4-af0f913d33d4",
+      "job_id": "dd99f8fe-09f9-5725-8101-319f88db6370",
+      "assessment_id": "3715571b-82cf-56fa-ba74-34cd63c92da3",
+      "decision": "needs_review",
+      "counts": {
+        "hard_supported": 2,
+        "hard_gaps": 0,
+        "hard_unknown": 0,
+        "soft_supported": 1,
+        "soft_gaps": 1,
+        "soft_unknown": 1,
+        "unspecified": 1
+      },
+      "rules": {
+        "version": "baseline-v1",
+        "aliases": [
+          {
+            "alias": "python programming",
+            "canonical": "python"
+          }
+        ],
+        "accepted_origins": [
+          "user_statement",
+          "source_document"
+        ]
+      },
+      "criteria": [
+        {
+          "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+          "importance": "hard",
+          "definition": {
+            "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+            "kind": "skill",
+            "name": "python",
+            "minimum_skill": "intermediate",
+            "minimum_language": null,
+            "expected": null
+          }
+        },
+        {
+          "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+          "importance": "hard",
+          "definition": {
+            "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+            "kind": "work_authorization",
+            "name": null,
+            "minimum_skill": null,
+            "minimum_language": null,
+            "expected": true
+          }
+        },
+        {
+          "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+          "importance": "soft",
+          "definition": {
+            "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+            "kind": "language",
+            "name": "english",
+            "minimum_skill": null,
+            "minimum_language": "B2",
+            "expected": null
+          }
+        },
+        {
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "importance": "soft",
+          "definition": {
+            "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+            "kind": "skill",
+            "name": "sql",
+            "minimum_skill": null,
+            "minimum_language": null,
+            "expected": null
+          }
+        },
+        {
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "importance": "soft",
+          "definition": {
+            "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+            "kind": "language",
+            "name": "german",
+            "minimum_skill": null,
+            "minimum_language": "B2",
+            "expected": null
+          }
+        },
+        {
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "importance": "unspecified",
+          "definition": {
+            "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+            "kind": "unsupported",
+            "name": null,
+            "minimum_skill": null,
+            "minimum_language": null,
+            "expected": null
+          }
+        }
+      ],
+      "facts": [
+        {
+          "id": "b96c6991-4539-5b1c-ab21-c6ac797514c0",
+          "kind": "name",
+          "record_id": null,
+          "field_path": "display_name",
+          "text": "Synthetic Candidate",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "7aee620d-06a8-5e0f-afbd-a3e2cef01f0d",
+          "kind": "skill",
+          "record_id": "f4d48804-dd0b-56e0-b976-23aadc00ced7",
+          "field_path": "skills/f4d48804-dd0b-56e0-b976-23aadc00ced7/name",
+          "text": "Skill: Python programming",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "ea7fc561-9592-55e5-903b-b2e70dad84d4",
+          "kind": "skill",
+          "record_id": "f4d48804-dd0b-56e0-b976-23aadc00ced7",
+          "field_path": "skills/f4d48804-dd0b-56e0-b976-23aadc00ced7/proficiency",
+          "text": "Python programming proficiency: advanced",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "7c86daf6-3d87-5e47-af79-a414f3e8d29e",
+          "kind": "skill",
+          "record_id": "ef008422-09b6-598b-884e-93ed2635a0ce",
+          "field_path": "skills/ef008422-09b6-598b-884e-93ed2635a0ce/name",
+          "text": "Skill: SQL",
+          "verification": "unverified",
+          "evidence": [
+            {
+              "id": "61f455e8-1e10-55c1-908d-bde2d0be4b5a",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "ai_inference",
+              "reference": "fixture:unreviewed-inference"
+            }
+          ]
+        },
+        {
+          "id": "3c014ff4-7726-5251-9239-9f70cfe5b3e1",
+          "kind": "skill",
+          "record_id": "ef008422-09b6-598b-884e-93ed2635a0ce",
+          "field_path": "skills/ef008422-09b6-598b-884e-93ed2635a0ce/proficiency",
+          "text": "SQL proficiency: expert",
+          "verification": "unverified",
+          "evidence": [
+            {
+              "id": "61f455e8-1e10-55c1-908d-bde2d0be4b5a",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "ai_inference",
+              "reference": "fixture:unreviewed-inference"
+            }
+          ]
+        },
+        {
+          "id": "bb2d47ce-2589-5f5a-ba48-fd670d4f4fc5",
+          "kind": "language",
+          "record_id": "ddd45210-832f-52cb-a216-45a682462833",
+          "field_path": "languages/ddd45210-832f-52cb-a216-45a682462833/name",
+          "text": "Language: English",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "b00b573a-aa11-5466-9e1a-2c68df21dbd9",
+          "kind": "language",
+          "record_id": "ddd45210-832f-52cb-a216-45a682462833",
+          "field_path": "languages/ddd45210-832f-52cb-a216-45a682462833/proficiency",
+          "text": "English level: C1",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "533d5c36-f06c-5cdd-af52-f85f15e5eaff",
+          "kind": "language",
+          "record_id": "acc18ac7-859e-5d57-b046-0c5bd2f23240",
+          "field_path": "languages/acc18ac7-859e-5d57-b046-0c5bd2f23240/name",
+          "text": "Language: German",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "7723c68e-3ff3-5a3d-9ad6-a2fa2efb94d2",
+          "kind": "language",
+          "record_id": "acc18ac7-859e-5d57-b046-0c5bd2f23240",
+          "field_path": "languages/acc18ac7-859e-5d57-b046-0c5bd2f23240/proficiency",
+          "text": "German level: A2",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "d0bbc415-00a6-5d41-a906-d7ab78dd4aa6",
+          "kind": "experience",
+          "record_id": "ebea4c57-1cac-5274-903e-97d73a4b8b2e",
+          "field_path": "experience/ebea4c57-1cac-5274-903e-97d73a4b8b2e",
+          "text": "Software Developer | Example Labs | 2021-01-01 to 2024-01-01",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "42080da8-d701-535c-8553-27f715d2f7c1",
+          "kind": "education",
+          "record_id": "9c436378-b8e1-525d-a0ff-109855d08366",
+          "field_path": "education/9c436378-b8e1-525d-a0ff-109855d08366",
+          "text": "Computing degree | Example Institute | 2017-01-01 to 2020-01-01",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "e55312d7-6ab8-5aed-b2f0-b2fa86c3ddbc",
+          "kind": "certification",
+          "record_id": "2f609b06-40b2-5359-bd10-01392635b6c2",
+          "field_path": "certifications/2f609b06-40b2-5359-bd10-01392635b6c2",
+          "text": "Example Systems Certificate | Example Training | issued 2022-01-01 | expiry not provided",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        },
+        {
+          "id": "fd2c44c0-69cf-51e4-ac42-2489edd9599f",
+          "kind": "authorization",
+          "record_id": null,
+          "field_path": "work_authorized",
+          "text": "Declared work authorization: true",
+          "verification": "user_confirmed",
+          "evidence": [
+            {
+              "id": "87bc9135-232d-5315-b158-5b8e7e9fb33d",
+              "created_at": "2026-01-01T00:00:00Z",
+              "origin": "user_statement",
+              "reference": "fixture:synthetic-user-statement"
+            }
+          ]
+        }
+      ],
+      "explanations": [
+        {
+          "finding": {
+            "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+            "importance": "hard",
+            "outcome": "met",
+            "reason": "supported",
+            "evidence_ids": [
+              "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+            ]
+          },
+          "source_description": "Python at intermediate level",
+          "explanation": "The declared profile evidence supports the configured requirement rule.",
+          "fact_ids": [
+            "7aee620d-06a8-5e0f-afbd-a3e2cef01f0d",
+            "ea7fc561-9592-55e5-903b-b2e70dad84d4"
+          ]
+        },
+        {
+          "finding": {
+            "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+            "importance": "hard",
+            "outcome": "met",
+            "reason": "supported",
+            "evidence_ids": [
+              "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+            ]
+          },
+          "source_description": "Work authorization explicitly declared",
+          "explanation": "The declared profile evidence supports the configured requirement rule.",
+          "fact_ids": [
+            "fd2c44c0-69cf-51e4-ac42-2489edd9599f"
+          ]
+        },
+        {
+          "finding": {
+            "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+            "importance": "soft",
+            "outcome": "met",
+            "reason": "supported",
+            "evidence_ids": [
+              "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+            ]
+          },
+          "source_description": "English B2 preferred",
+          "explanation": "The declared profile evidence supports the configured requirement rule.",
+          "fact_ids": [
+            "bb2d47ce-2589-5f5a-ba48-fd670d4f4fc5",
+            "b00b573a-aa11-5466-9e1a-2c68df21dbd9"
+          ]
+        },
+        {
+          "finding": {
+            "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+            "importance": "soft",
+            "outcome": "unknown",
+            "reason": "unverified",
+            "evidence_ids": []
+          },
+          "source_description": "SQL preferred",
+          "explanation": "Available claims are unverified under the assessment evidence policy.",
+          "fact_ids": [
+            "7c86daf6-3d87-5e47-af79-a414f3e8d29e",
+            "3c014ff4-7726-5251-9239-9f70cfe5b3e1"
+          ]
+        },
+        {
+          "finding": {
+            "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+            "importance": "soft",
+            "outcome": "unmet",
+            "reason": "below_minimum",
+            "evidence_ids": [
+              "87bc9135-232d-5315-b158-5b8e7e9fb33d"
+            ]
+          },
+          "source_description": "German B2 preferred",
+          "explanation": "The evidenced declared level is below the configured minimum; this is a stated-data gap, not a competence judgment.",
+          "fact_ids": [
+            "533d5c36-f06c-5cdd-af52-f85f15e5eaff",
+            "7723c68e-3ff3-5a3d-9ad6-a2fa2efb94d2"
+          ]
+        },
+        {
+          "finding": {
+            "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+            "importance": "unspecified",
+            "outcome": "unknown",
+            "reason": "unsupported_criterion",
+            "evidence_ids": []
+          },
+          "source_description": "Leadership potential (unspecified importance)",
+          "explanation": "This criterion is outside supported business rules. No candidate judgment is made.",
+          "fact_ids": []
+        }
+      ],
+      "clarifications": [
+        {
+          "id": "2c2925ec-82c9-5b67-94d8-76222d36c24b",
+          "reason": "unverified_fact",
+          "question": "Can you confirm the profile statement at skills/ef008422-09b6-598b-884e-93ed2635a0ce/name and supply user-confirmed supporting evidence?",
+          "requirement_id": null,
+          "fact_ids": [
+            "7c86daf6-3d87-5e47-af79-a414f3e8d29e"
+          ],
+          "blocking": false
+        },
+        {
+          "id": "a4af0afe-09fc-5009-b034-f6586751df2c",
+          "reason": "unverified_fact",
+          "question": "Can you confirm the profile statement at skills/ef008422-09b6-598b-884e-93ed2635a0ce/proficiency and supply user-confirmed supporting evidence?",
+          "requirement_id": null,
+          "fact_ids": [
+            "3c014ff4-7726-5251-9239-9f70cfe5b3e1"
+          ],
+          "blocking": false
+        },
+        {
+          "id": "5b4479d0-e4f4-5d89-82cf-6e95e9248c58",
+          "reason": "requirement_unknown",
+          "question": "For requirement da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+          "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+          "fact_ids": [
+            "7c86daf6-3d87-5e47-af79-a414f3e8d29e",
+            "3c014ff4-7726-5251-9239-9f70cfe5b3e1"
+          ],
+          "blocking": false
+        },
+        {
+          "id": "f53ea3c5-98d3-5515-98a5-a386c09d9c07",
+          "reason": "requirement_gap",
+          "question": "For requirement e3a5aecc-f089-52d9-8bc0-8d3c9914eaac, which current profile fact or user-provided evidence confirms the stated value/level? If unknown, say so.",
+          "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+          "fact_ids": [
+            "533d5c36-f06c-5cdd-af52-f85f15e5eaff",
+            "7723c68e-3ff3-5a3d-9ad6-a2fa2efb94d2"
+          ],
+          "blocking": false
+        },
+        {
+          "id": "9dc0fba6-dd19-5a5e-816e-7defbbd3356d",
+          "reason": "unsupported_requirement",
+          "question": "This requirement is outside supported rules. Review whether it is job-related; do not provide protected personal details.",
+          "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+          "fact_ids": [],
+          "blocking": false
+        }
+      ],
+      "practice": {
+        "questions": [
+          {
+            "id": "6d215969-0180-5d73-a42e-2f2a181d2d56",
+            "requirement_id": "0cb67d6f-05e2-5ab2-8d32-abbd6d834664",
+            "category": "technical",
+            "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+          },
+          {
+            "id": "51124250-5d91-50b6-b524-9a4212c5d629",
+            "requirement_id": "ba0d0a60-0570-51b0-acd0-c4557b97be3a",
+            "category": "evidence_review",
+            "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+          },
+          {
+            "id": "3e696964-24e3-5697-a61a-7c77336ff621",
+            "requirement_id": "1f426d0f-5d32-5656-a736-6a72cde1eee0",
+            "category": "language",
+            "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+          },
+          {
+            "id": "642b74c4-f839-513d-8520-e9554569674a",
+            "requirement_id": "da2a4ac6-1fc9-5bc0-918a-17f7f4b455f2",
+            "category": "technical",
+            "prompt": "Work through a small task involving the skill in this linked requirement. Explain design choices, tests and limitations; label hypothetical examples clearly."
+          },
+          {
+            "id": "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+            "requirement_id": "e3a5aecc-f089-52d9-8bc0-8d3c9914eaac",
+            "category": "language",
+            "prompt": "Practice a job-related explanation using the language in this linked requirement. Do not claim a proficiency level without evidence."
+          },
+          {
+            "id": "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+            "requirement_id": "e38308c9-cddc-5b67-9330-105d4f179f11",
+            "category": "evidence_review",
+            "prompt": "Review this source requirement for job relevance and clarify unsupported assumptions without judging personal traits."
+          },
+          {
+            "id": "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9",
+            "requirement_id": null,
+            "category": "behavioral",
+            "prompt": "Describe a task you actually completed: context, your role, choices and evidenced outcome. If none is available, use a clearly labeled hypothetical exercise; never invent metrics."
+          }
+        ],
+        "sessions": [
+          {
+            "order": 1,
+            "duration_minutes": 20,
+            "focus": "Evidence and clarification review",
+            "question_ids": [
+              "6d215969-0180-5d73-a42e-2f2a181d2d56",
+              "51124250-5d91-50b6-b524-9a4212c5d629",
+              "3e696964-24e3-5697-a61a-7c77336ff621",
+              "642b74c4-f839-513d-8520-e9554569674a",
+              "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+              "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+              "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+            ],
+            "deliverable": "List confirmed examples, genuine gaps and unanswered questions."
+          },
+          {
+            "order": 2,
+            "duration_minutes": 30,
+            "focus": "Job-relevant technical and language practice",
+            "question_ids": [
+              "6d215969-0180-5d73-a42e-2f2a181d2d56",
+              "51124250-5d91-50b6-b524-9a4212c5d629",
+              "3e696964-24e3-5697-a61a-7c77336ff621",
+              "642b74c4-f839-513d-8520-e9554569674a",
+              "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+              "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+              "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+            ],
+            "deliverable": "A small practice solution or explanation with assumptions clearly marked."
+          },
+          {
+            "order": 3,
+            "duration_minutes": 25,
+            "focus": "Mock interview and reflection",
+            "question_ids": [
+              "6d215969-0180-5d73-a42e-2f2a181d2d56",
+              "51124250-5d91-50b6-b524-9a4212c5d629",
+              "3e696964-24e3-5697-a61a-7c77336ff621",
+              "642b74c4-f839-513d-8520-e9554569674a",
+              "e81584f8-633a-54a0-929e-49ca0a1c9e04",
+              "d44b5f01-04a1-55dd-a3eb-8cea6faae8af",
+              "edd87e64-aa3b-59ec-b9f2-64c09a2ee3b9"
+            ],
+            "deliverable": "Evidence-backed answers and a revised practice checklist, not invented career claims."
+          }
+        ]
+      },
+      "blocking_reasons": [],
+      "interpretation": "Declared evidence comparison, not a hiring prediction or verified competence judgment"
+    },
+    "documents": [
+      {
+        "kind": "resume",
+        "document_id": "7f5e6da0-c022-5dc5-be9e-2950b18921e2",
+        "version_id": "6bfb0819-ab36-5144-8eeb-7ed63bbe08e2",
+        "previous_version_id": "48a8da48-b5fc-55a2-9f7e-2ee98ba53770",
+        "fact_ids": [
+          "7aee620d-06a8-5e0f-afbd-a3e2cef01f0d",
+          "ea7fc561-9592-55e5-903b-b2e70dad84d4",
+          "bb2d47ce-2589-5f5a-ba48-fd670d4f4fc5",
+          "b00b573a-aa11-5466-9e1a-2c68df21dbd9",
+          "533d5c36-f06c-5cdd-af52-f85f15e5eaff",
+          "7723c68e-3ff3-5a3d-9ad6-a2fa2efb94d2",
+          "d0bbc415-00a6-5d41-a906-d7ab78dd4aa6",
+          "42080da8-d701-535c-8553-27f715d2f7c1",
+          "e55312d7-6ab8-5aed-b2f0-b2fa86c3ddbc",
+          "b96c6991-4539-5b1c-ab21-c6ac797514c0"
+        ],
+        "content_sha256": "9618dd72b9bb8ee04b54bcd4ef2f9130c61cf11f6bff8059aaf13692cac7810b",
+        "review_required": true
+      },
+      {
+        "kind": "cover_letter",
+        "document_id": "88f967f9-e6ad-55a5-96f9-cedc8c07497e",
+        "version_id": "a7b49b01-2869-5f95-86ef-8b886ccca848",
+        "previous_version_id": null,
+        "fact_ids": [
+          "7aee620d-06a8-5e0f-afbd-a3e2cef01f0d",
+          "ea7fc561-9592-55e5-903b-b2e70dad84d4",
+          "bb2d47ce-2589-5f5a-ba48-fd670d4f4fc5",
+          "b96c6991-4539-5b1c-ab21-c6ac797514c0"
+        ],
+        "content_sha256": "3860bba3414a8f2390bbb54f166bf80c9a1e040b30e49fa55b1e56e1c7de4629",
+        "review_required": true
+      }
+    ]
+  },
+  "drafts": [
+    {
+      "version_id": "6bfb0819-ab36-5144-8eeb-7ed63bbe08e2",
+      "kind": "resume",
+      "content": "CV DRAFT — review required\nSynthetic Candidate\nTarget role from job source: \"Synthetic Python Developer\" | \"Example Organization\"\n\nUser-confirmed profile statements:\n- Skill: Python programming\n- Python programming proficiency: advanced\n- Language: English\n- English level: C1\n- Language: German\n- German level: A2\n- Software Developer | Example Labs | 2021-01-01 to 2024-01-01\n- Computing degree | Example Institute | 2017-01-01 to 2020-01-01\n- Example Systems Certificate | Example Training | issued 2022-01-01 | expiry not provided\n\nOnly cited profile facts are included. Missing/unverified claims were not filled in.",
+      "changes": "--- version-1\n+++ version-2\n@@ -1,3 +1,16 @@\n-Original user CV\n+CV DRAFT — review required\n Synthetic Candidate\n-Software Developer at Example Labs\n+Target role from job source: \"Synthetic Python Developer\" | \"Example Organization\"\n+\n+User-confirmed profile statements:\n+- Skill: Python programming\n+- Python programming proficiency: advanced\n+- Language: English\n+- English level: C1\n+- Language: German\n+- German level: A2\n+- Software Developer | Example Labs | 2021-01-01 to 2024-01-01\n+- Computing degree | Example Institute | 2017-01-01 to 2020-01-01\n+- Example Systems Certificate | Example Training | issued 2022-01-01 | expiry not provided\n+\n+Only cited profile facts are included. Missing/unverified claims were not filled in."
+    },
+    {
+      "version_id": "a7b49b01-2869-5f95-86ef-8b886ccca848",
+      "kind": "cover_letter",
+      "content": "COVER LETTER DRAFT — review required\nDear hiring team,\n\nI am preparing an application for the role identified below.\nRole title from job source: \"Synthetic Python Developer\"\nEmployer from job source: \"Example Organization\"\nThe following statements from my profile are relevant for your review:\n- Skill: Python programming\n- Python programming proficiency: advanced\n- Language: English\n\nI would welcome a discussion of the role and the evidence behind these statements.\nSincerely,\nSynthetic Candidate",
+      "changes": "--- new-document\n+++ version-1\n@@ -0,0 +1,14 @@\n+COVER LETTER DRAFT — review required\n+Dear hiring team,\n+\n+I am preparing an application for the role identified below.\n+Role title from job source: \"Synthetic Python Developer\"\n+Employer from job source: \"Example Organization\"\n+The following statements from my profile are relevant for your review:\n+- Skill: Python programming\n+- Python programming proficiency: advanced\n+- Language: English\n+\n+I would welcome a discussion of the role and the evidence behind these statements.\n+Sincerely,\n+Synthetic Candidate"
+    }
+  ]
+}
