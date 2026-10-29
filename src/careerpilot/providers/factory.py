@@ -10,12 +10,17 @@ from pydantic import BaseModel, ValidationError
 from careerpilot.application.chat_agent_contracts import ChatModel, ToolDefinition
 from careerpilot.application.execution import remaining_timeout
 from careerpilot.application.extraction import JobModel, ProviderConfigurationError
+from careerpilot.application.intent import (
+    DeterministicIntentModel,
+    IntentClassification,
+    IntentModel,
+)
 from careerpilot.application.preparation_contracts import DraftPlanner
 from careerpilot.application.security import validate_outbound
 from careerpilot.domain.extraction import JobExtraction
 from careerpilot.providers.chat_settings import ChatSettings
 from careerpilot.providers.mock import MockJobModel
-from careerpilot.providers.openai import OpenAIJobModel
+from careerpilot.providers.openai import OpenAIIntentModel, OpenAIJobModel
 from careerpilot.providers.settings import LLMSettings
 
 
@@ -95,6 +100,17 @@ def build_job_model(settings: LLMSettings | None = None) -> JobModel:
     return OpenAIJobModel(
         configured.model or "",
         _structured(configured, JobExtraction),
+        max_retries=configured.max_retries,
+    )
+
+
+def build_intent_classifier(settings: LLMSettings | None = None) -> IntentModel:
+    """Build the optional classifier using the existing provider boundary."""
+    configured = _configuration(settings)
+    if configured.provider == "mock":
+        return DeterministicIntentModel()
+    return OpenAIIntentModel(
+        _structured(configured, IntentClassification),
         max_retries=configured.max_retries,
     )
 

@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+from collections.abc import Callable
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from typing import Literal
@@ -13,9 +14,15 @@ from pydantic import Field
 
 from careerpilot.agent_portal import PortalAgentTools
 from careerpilot.application.action_contracts import ActionDenied
+from careerpilot.application.agent_contracts import (
+    AgentCapability,
+    AgentRequest,
+    GlobalExecutionBudget,
+)
 from careerpilot.application.analysis import AnalysisReport, AnalysisService
 from careerpilot.application.chat_agent import ConversationalAgent
 from careerpilot.application.chat_agent_contracts import ModelReply, ToolCall
+from careerpilot.application.context_retrieval import ConfirmedMemoryRetriever
 from careerpilot.application.conversations import ConversationService, MessageInput
 from careerpilot.application.discovery_contracts import AccessDenied
 from careerpilot.application.draft_generation import planning_input, validate_plan
@@ -25,7 +32,10 @@ from careerpilot.application.extraction import (
     InvalidModelOutput,
     MockInputUnsupported,
 )
+from careerpilot.application.intent import IntentRouter
+from careerpilot.application.memory import CareerMemory, MemoryPrincipal
 from careerpilot.application.preparation_contracts import PreparationValidationError
+from careerpilot.application.supervisor import CareerSupervisor
 from careerpilot.approval_demo import action, compose
 from careerpilot.chat_portal import PortalChatBackend
 from careerpilot.discovery_demo import build_demo_service
@@ -35,6 +45,7 @@ from careerpilot.integrations.extraction_fixture import MOCK_JOB_TEXT
 from careerpilot.integrations.simulated_actions import SimulatedActionAdapter
 from careerpilot.integrations.synthetic import FIXTURE_TIME, seed_synthetic, synthetic_bundle
 from careerpilot.persistence.conversations import ConversationDatabase
+from careerpilot.persistence.memory_sqlite import SQLiteMemoryDatabase
 from careerpilot.persistence.sqlite import SQLiteDatabase
 from careerpilot.portal import Portal
 from careerpilot.preparation_demo import build_preparation_demo
@@ -62,6 +73,12 @@ class EvalCase(Model):
         "chat_search_ar",
         "chat_injection",
         "chat_config",
+        "agent_routing",
+        "intent_fallback",
+        "delegation_limits",
+        "delegation_conflict",
+        "memory_isolation",
+        "memory_provenance_delete",
     ]
     expected: dict[str, str | int | bool]
 
@@ -94,6 +111,132 @@ def _chat_service(root: Path, model: _ScriptedChat) -> tuple[ConversationService
 
 
 def evaluate_case(scenario: str, root: Path) -> dict[str, str | int | bool]:
+    if scenario == "agent_routing":
+        calls: list[str] = []
+
+        def invoke(name: str) -> Callable[[AgentRequest], object]:
+            def run(_: AgentRequest) -> object:
+                calls.append(name)
+                return type("Outcome", (), {"status": "completed"})()
+
+            return run
+
+        supervisor = CareerSupervisor(
+            {
+                AgentCapability.JOB_DISCOVERY: invoke("jobs"),
+                AgentCapability.JOB_ANALYSIS: invoke("analyze"),
+            }
+        )
+        agent_request = AgentRequest(
+            user_id=uuid4(),
+            conversation_id=uuid4(),
+            task_id=uuid4(),
+            requested_capability=AgentCapability.JOB_ANALYSIS,
+            allowed_capabilities=(AgentCapability.JOB_ANALYSIS,),
+        )
+        routing_result = supervisor.run(agent_request)
+        return {
+            "completed": routing_result.status.value == "completed",
+            "routed": calls == ["analyze"],
+        }
+    if scenario == "intent_fallback":
+
+        class FailingClassifier:
+            def classify(self, _: str) -> object:
+                raise TimeoutError()
+
+        routed: list[AgentRequest] = []
+        router = IntentRouter(FailingClassifier(), lambda request: routed.append(request))
+        classification = router.classify("Show my jobs")
+        router.route(
+            "Show my jobs",
+            user_id=uuid4(),
+            conversation_id=uuid4(),
+            task_id=uuid4(),
+            allowed_capabilities=(AgentCapability.JOB_DISCOVERY,),
+        )
+        return {
+            "intent": classification.intent,
+            "fallback_safe": len(routed) == 1
+            and routed[0].requested_capability == AgentCapability.JOB_DISCOVERY,
+        }
+    if scenario == "delegation_limits":
+        supervisor = CareerSupervisor(
+            {AgentCapability.JOB_ANALYSIS: lambda _: type("Outcome", (), {"status": "completed"})()}
+        )
+        agent_request = AgentRequest(
+            user_id=uuid4(),
+            conversation_id=uuid4(),
+            task_id=uuid4(),
+            requested_capability=AgentCapability.JOB_ANALYSIS,
+            allowed_capabilities=(AgentCapability.JOB_ANALYSIS,),
+            budget=GlobalExecutionBudget(max_specialists=1),
+        )
+        delegation_result = supervisor.delegate(
+            agent_request, (AgentCapability.JOB_ANALYSIS, AgentCapability.JOB_ANALYSIS)
+        )
+        return {"denied": delegation_result.errors[0].code.value == "validation_failure"}
+    if scenario == "delegation_conflict":
+        first, second = uuid4(), uuid4()
+        outcomes = iter(
+            (
+                type("Outcome", (), {"status": "completed", "assessment_id": first})(),
+                type("Outcome", (), {"status": "completed", "assessment_id": second})(),
+            )
+        )
+        supervisor = CareerSupervisor(
+            {
+                AgentCapability.JOB_DISCOVERY: lambda _: next(outcomes),
+                AgentCapability.JOB_ANALYSIS: lambda _: next(outcomes),
+            }
+        )
+        agent_request = AgentRequest(
+            user_id=uuid4(),
+            conversation_id=uuid4(),
+            task_id=uuid4(),
+            requested_capability=AgentCapability.JOB_DISCOVERY,
+            allowed_capabilities=(AgentCapability.JOB_DISCOVERY,),
+        )
+        delegation_result = supervisor.delegate(
+            agent_request, (AgentCapability.JOB_DISCOVERY, AgentCapability.JOB_ANALYSIS)
+        )
+        return {
+            "conflict_reported": any(
+                error.code.value == "conflicting_results" for error in delegation_result.errors
+            )
+        }
+    if scenario in {"memory_isolation", "memory_provenance_delete"}:
+        memory_database = SQLiteMemoryDatabase(root / "memory.sqlite3")
+        memory_database.initialize()
+        owner, other = uuid4(), uuid4()
+        memory = CareerMemory(MemoryPrincipal(owner), memory_database)
+        from careerpilot.domain.common import Evidence, EvidenceOrigin
+        from careerpilot.domain.memory import ConfirmedCareerFact
+
+        item = memory.confirm(
+            {
+                "id": uuid4(),
+                "value": ConfirmedCareerFact(
+                    statement="Synthetic Python experience",
+                    evidence=(
+                        Evidence(origin=EvidenceOrigin.USER_STATEMENT, reference="synthetic:user"),
+                    ),
+                ),
+                "expected_version": 0,
+            },
+            explicitly_confirmed=True,
+        )
+        own = ConfirmedMemoryRetriever(memory).retrieve("Python")
+        foreign = ConfirmedMemoryRetriever(
+            CareerMemory(MemoryPrincipal(other), memory_database)
+        ).retrieve()
+        if scenario == "memory_isolation":
+            return {"isolated": bool(own.items) and not foreign.items}
+        memory.delete(item.id, expected_version=item.version)
+        return {
+            "provenance": own.items[0].reference.provenance == "explicit_user_confirmation",
+            "deleted": not ConfirmedMemoryRetriever(memory).retrieve("Python").items,
+        }
     if scenario == "extraction":
         envelope = ExtractionService(MockJobModel()).extract(
             ExtractionRequest(

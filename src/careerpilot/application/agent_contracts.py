@@ -131,6 +131,7 @@ class AgentErrorCode(StrEnum):
     CANCELLED = "cancelled"
     UNKNOWN_OUTCOME = "unknown_outcome"
     INTERNAL_FAILURE = "internal_failure"
+    CONFLICTING_RESULTS = "conflicting_results"
 
 
 class AgentError(Model):

@@ -12,6 +12,12 @@
     {"id":"format_failure","scenario":"format_failure","expected":{"rejected":true}},
     {"id":"tool_error","scenario":"tool_error","expected":{"denied":true}},
     {"id":"approval_safety","scenario":"approval","expected":{"unapproved_effects":0}},
-    {"id":"recovery","scenario":"recovery","expected":{"effects":1,"status":"simulated"}}
+    {"id":"recovery","scenario":"recovery","expected":{"effects":1,"status":"simulated"}},
+    {"id":"agent_routing","scenario":"agent_routing","expected":{"completed":true,"routed":true}},
+    {"id":"intent_fallback","scenario":"intent_fallback","expected":{"intent":"jobs","fallback_safe":true}},
+    {"id":"delegation_limits","scenario":"delegation_limits","expected":{"denied":true}},
+    {"id":"delegation_conflict","scenario":"delegation_conflict","expected":{"conflict_reported":true}},
+    {"id":"memory_isolation","scenario":"memory_isolation","expected":{"isolated":true}},
+    {"id":"memory_provenance_delete","scenario":"memory_provenance_delete","expected":{"provenance":true,"deleted":true}}
   ]
 }

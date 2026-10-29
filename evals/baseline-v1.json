@@ -1,8 +1,8 @@
 {
   "dataset_version": "careerpilot-eval-v1",
-  "dataset_sha256": "61163b50681e689763b29c83e8204991190abab0fe64b2899c0fc4ddddbfa182",
-  "passed": 12,
-  "total": 12,
+  "dataset_sha256": "ff50305cd0042eba9e33e28cffb6405c6ec14ad6d58648ea2c8605d4ed48c335",
+  "passed": 18,
+  "total": 18,
   "results": [
     {
       "id": "extraction",
@@ -94,6 +94,36 @@
         "effects": 1,
         "status": "simulated"
       }
+    },
+    {
+      "id": "agent_routing",
+      "passed": true,
+      "observed": {"completed": true, "routed": true}
+    },
+    {
+      "id": "intent_fallback",
+      "passed": true,
+      "observed": {"intent": "jobs", "fallback_safe": true}
+    },
+    {
+      "id": "delegation_limits",
+      "passed": true,
+      "observed": {"denied": true}
+    },
+    {
+      "id": "delegation_conflict",
+      "passed": true,
+      "observed": {"conflict_reported": true}
+    },
+    {
+      "id": "memory_isolation",
+      "passed": true,
+      "observed": {"isolated": true}
+    },
+    {
+      "id": "memory_provenance_delete",
+      "passed": true,
+      "observed": {"provenance": true, "deleted": true}
     }
   ]
 }

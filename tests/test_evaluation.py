@@ -16,7 +16,7 @@ def test_offline_dataset_blocks_any_deterministic_failure() -> None:
     path = Path(__file__).resolve().parents[1] / "evals" / "dataset-v1.json"
     first, second = run_dataset(path), run_dataset(path)
     assert first == second
-    assert first["passed"] == first["total"] == 12
+    assert first["passed"] == first["total"] == 18
 
 
 def test_chat_agent_offline_dataset() -> None:

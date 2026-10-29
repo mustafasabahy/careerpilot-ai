@@ -36,6 +36,37 @@ UUID/reference conventions. They do not create agents, route requests, grant
 authorization, persist events, or enforce a global runtime budget. Phase B may wrap
 existing workflows with these contracts without duplicating business rules.
 
+### Phase B deterministic supervisor
+
+`application/supervisor.py` adds `CareerSupervisor`, a thin application-level router.
+It accepts a validated `AgentRequest`, checks that the capability is in the request's
+allowed set and in the Phase B routing set, applies the supplied specialist budget,
+then invokes exactly one composition-bound workflow adapter. The intended mapping is
+`job_discovery` to `DiscoveryWorkflow`, `job_analysis` to `JobAnalysisWorkflow`,
+`career_preparation` to `PreparationWorkflow`, and `approval_coordination` to
+`ActionApprovalWorkflow`. Adapters construct the existing workflow payloads and keep
+Portal ownership checks; the supervisor never grants authorization or executes a side
+effect. Outcomes are converted to bounded `AgentResult` values, with waiting,
+unknown, and safe failure states preserved. No supervisor is connected to API/chat
+routing yet, and no autonomous delegation or persistence was added.
+
+### Phase C optional intent classification
+
+`application/intent.py` adds `IntentClassification` and `IntentRouter`. The schema
+accepts only `jobs`, `analyze`, `prepare`, and `approvals`, with bounded confidence,
+missing information, and references. `IntentRouter` invokes the existing
+`CareerSupervisor` only after structured validation; low-confidence, malformed, or
+ambiguous output returns clarification. Provider failures use the existing bounded
+deterministic command parser and never guess an unsupported intent. Resource
+references require an application-supplied ownership validator before they can enter
+an `AgentRequest`.
+
+`providers/factory.py` exposes `build_intent_classifier`, reusing the existing
+OpenAI structured-output boundary. `providers/openai.py` supplies an English-only
+classification policy and the existing timeout, retry, rate-limit, refusal, and
+malformed-output handling. The classifier cannot grant permissions, call tools, or
+approve actions. No API/chat wiring, new provider, or Phase D behavior was added.
+
 | Boundary | Responsibility | Allowed dependencies | Current state after Phase 14 |
 | --- | --- | --- | --- |
 | Domain (`domain/`) | Career entities, value objects, business invariants | Standard library and Pydantic; no I/O | Profiles/jobs/fit/documents/actions/memory/evidence and runtime contracts |
@@ -329,3 +360,47 @@ Stable graph request identities support explicit replay after a transcript write
 cross-database atomicity is not claimed. Approval controls reuse existing exact-version
 authenticated events. See chat.md and chat-agent-graph.md for limits, recovery, endpoints,
 retention, RTL behavior and operational migration.
+
+## Phase D: thin specialist wrappers
+
+`application/specialists.py` provides five stable, capability-scoped facades:
+discovery, analysis, preparation, approval, and career context. Each wrapper validates
+the shared `AgentRequest`, checks that its declared capability matches the request, enforces
+the existing execution budget, invokes one owner-authorized workflow adapter, and converts
+the result to `AgentResult`. Workflow construction and ownership checks remain in the
+composition/application layer; the wrappers add no database, memory, delegation, or side
+effects. Approval pauses remain explicit user actions and uncertain external outcomes remain
+uncertain rather than being reported as success.
+
+## Phase E: bounded sequential delegation
+
+`CareerSupervisor.delegate` coordinates a caller-supplied ordered sequence of registered
+capabilities. It creates a new child task ID for each invocation, links it to the parent,
+copies only the request references, and applies the shared delegation-depth and specialist
+limits before invoking the existing adapters. Execution is sequential; no parallelism,
+agent-to-agent calls, or new persistence layer was introduced. The supervisor aggregates
+typed results, preserves partial/failure states and provenance, and reports conflicting
+resource references with an explicit error rather than choosing silently. Delegation events
+are exposed for the existing persistence/logging boundary; this implementation does not
+claim durable exactly-once execution.
+
+## Phase F: controlled memory retrieval
+
+`application/context_retrieval.py` adds `ConfirmedMemoryRetriever`, a read-only adapter
+over the authenticated `CareerMemory` repository. Retrieval is owner-scoped, deterministic,
+bounded by result count and context characters, and relevance-filtered by explicit query
+terms and memory kinds. Results carry the memory ID, version, kind, explicit-confirmation
+provenance, and the current owner revision. Corrections and deletions are honored by the
+existing repository; retrieval never writes memory, grants authorization, or exposes
+unverified assistant output. `CareerContextWorkflow` remains the review/checkpoint boundary
+for context acceptance rather than being bypassed by retrieval.
+
+## Phase I: multi-agent evaluation coverage
+
+The deterministic evaluation harness (`evaluation.py`, `evals/dataset-v1.json`) now
+exercises the implemented A–F boundaries end to end: routing, classifier fallback,
+delegation budgets and conflict reporting, owner-isolated confirmed-memory retrieval,
+provenance/deletion, and existing approval/recovery behavior. Results are compared against
+the versioned 18-case baseline. Phases G and H remain unimplemented because their provider
+and scheduling decision gates are unresolved; no unsupported scenarios are reported as
+passing.

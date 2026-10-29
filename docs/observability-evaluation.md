@@ -46,3 +46,13 @@ rejects replica-endpoint environment configuration, and sets telemetry SDK retri
 zero. Deterministic baseline comparison now checks observed case results as well as
 the dataset hash and 100% required-pass threshold. Browser API documentation is
 self-hosted to preserve the strict CSP without remote scripts.
+
+## Phase I multi-agent evaluation
+
+The versioned offline dataset now includes deterministic checks for supervisor routing,
+safe intent-classifier fallback, delegation limits, conflicting specialist references,
+owner-isolated memory retrieval, provenance, and deletion. The baseline now contains 18
+passing cases and is regenerated only from actual execution. Provider and scheduling
+scenarios are intentionally not included: Phase G has no authorized commercial provider
+and Phase H has no configured schedule or notification policy. Paid live-model tests remain
+opt-in and are not part of the normal quality gate.
