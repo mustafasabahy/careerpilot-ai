@@ -70,6 +70,8 @@ Business rules remain ordinary Python outside the graph, so they are independent
 testable. LangChain is limited to provider/tool boundaries; it does not own
 authorization or approval decisions.
 
+See the code-level map in [docs/langgraph-langchain.md](docs/langgraph-langchain.md).
+
 ## Quick start
 
 ```sh
